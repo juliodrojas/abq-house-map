@@ -131,7 +131,7 @@
       '<div class="score"><b>' + l.v3 + '</b>safety</div>' +
       '<div class="score"><b>' + l.total + '</b>total</div></div>' +
       flagHtml +
-      '<div class="actions"><a target="_blank" rel="noopener" href="' + l.url + '">Listing + photos 📄</a></div></div>';
+      '<div class="actions"><a target="_blank" rel="noopener" href="' + (l.pdf || l.url) + '">Brochure 📄</a></div></div>';
     card.classList.remove("hidden");
     document.getElementById("card-x").onclick = function () { card.classList.add("hidden"); };
   }

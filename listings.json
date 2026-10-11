@@ -16,7 +16,8 @@
   "total": 14,
   "avg": 4.7,
   "url": "https://www.nmwelcomehome.com/listing/1110621-2936-madeira-drive-ne-albuquerque-nm-87110/brochure",
-  "mls": 1110621
+  "mls": 1110621,
+  "pdf": "brochures/1110621.pdf"
  },
  {
   "id": 1,
@@ -38,7 +39,8 @@
   "avg": 5.3,
   "approx": false,
   "url": "https://www.nmwelcomehome.com/listing/1110405-2900-vista-del-rey-ne-unit-25b-albuquerque-nm-87112/brochure",
-  "mls": 1110405
+  "mls": 1110405,
+  "pdf": "brochures/1110405.pdf"
  },
  {
   "id": 2,
@@ -57,7 +59,8 @@
   "total": 12,
   "avg": 4.0,
   "url": "https://www.nmwelcomehome.com/listing/1107351-427-headingly-avenue-nw-albuquerque-nm-87107/brochure",
-  "mls": 1107351
+  "mls": 1107351,
+  "pdf": "brochures/1107351.pdf"
  },
  {
   "id": 3,
@@ -76,7 +79,8 @@
   "total": 17,
   "avg": 5.7,
   "url": "https://www.nmwelcomehome.com/listing/1111209-7405-desert-canyon-place-sw-albuquerque-nm-87121/brochure",
-  "mls": 1111209
+  "mls": 1111209,
+  "pdf": "brochures/1111209.pdf"
  },
  {
   "id": 4,
@@ -95,7 +99,8 @@
   "total": 17,
   "avg": 5.7,
   "url": "https://www.nmwelcomehome.com/listing/1103992-7515-s-autumn-breeze-road-sw-albuquerque-nm-87121/brochure",
-  "mls": 1103992
+  "mls": 1103992,
+  "pdf": "brochures/1103992.pdf"
  },
  {
   "id": 5,
@@ -114,7 +119,8 @@
   "total": 17,
   "avg": 5.7,
   "url": "https://www.nmwelcomehome.com/listing/1111705-317-64th-street-sw-albuquerque-nm-87121/brochure",
-  "mls": 1111705
+  "mls": 1111705,
+  "pdf": "brochures/1111705.pdf"
  },
  {
   "id": 6,
@@ -133,7 +139,8 @@
   "total": 14,
   "avg": 4.7,
   "url": "https://www.nmwelcomehome.com/listing/1112142-725-cannon-road-sw-albuquerque-nm-87105/brochure",
-  "mls": 1112142
+  "mls": 1112142,
+  "pdf": "brochures/1112142.pdf"
  },
  {
   "id": 7,
@@ -152,7 +159,8 @@
   "total": 16,
   "avg": 5.3,
   "url": "https://www.nmwelcomehome.com/listing/1110552-6075-redlands-road-nw-albuquerque-nm-87120/brochure",
-  "mls": 1110552
+  "mls": 1110552,
+  "pdf": "brochures/1110552.pdf"
  },
  {
   "id": 8,
@@ -171,7 +179,8 @@
   "total": 14,
   "avg": 4.7,
   "url": "https://www.nmwelcomehome.com/listing/1105244-4803-mescalero-road-ne-albuquerque-nm-87110/brochure",
-  "mls": 1105244
+  "mls": 1105244,
+  "pdf": "brochures/1105244.pdf"
  },
  {
   "id": 9,
@@ -190,7 +199,8 @@
   "total": 14,
   "avg": 4.7,
   "url": "https://www.nmwelcomehome.com/listing/1112093-825-59th-street-nw-albuquerque-nm-87105/brochure",
-  "mls": 1112093
+  "mls": 1112093,
+  "pdf": "brochures/1112093.pdf"
  },
  {
   "id": 10,
@@ -209,7 +219,8 @@
   "total": 14,
   "avg": 4.7,
   "url": "https://www.nmwelcomehome.com/listing/1110838-617-loma-hermosa-drive-nw-albuquerque-nm-87105/brochure",
-  "mls": 1110838
+  "mls": 1110838,
+  "pdf": "brochures/1110838.pdf"
  },
  {
   "id": 11,
@@ -228,7 +239,8 @@
   "total": 14,
   "avg": 4.7,
   "url": "https://www.nmwelcomehome.com/listing/1110694-4312-hendrix-road-ne-albuquerque-nm-87110/brochure",
-  "mls": 1110694
+  "mls": 1110694,
+  "pdf": "brochures/1110694.pdf"
  },
  {
   "id": 12,
@@ -247,7 +259,8 @@
   "total": 17,
   "avg": 5.7,
   "url": "https://www.nmwelcomehome.com/listing/1110527-5512-cleo-road-sw-albuquerque-nm-87121/brochure",
-  "mls": 1110527
+  "mls": 1110527,
+  "pdf": "brochures/1110527.pdf"
  },
  {
   "id": 13,
@@ -268,7 +281,8 @@
   "total": 14,
   "avg": 4.7,
   "url": "https://www.nmwelcomehome.com/listing/1110275-320-324-49th-street-nw-albuquerque-nm-87105/brochure",
-  "mls": 1110275
+  "mls": 1110275,
+  "pdf": "brochures/1110275.pdf"
  },
  {
   "id": 14,
@@ -287,7 +301,8 @@
   "total": 16,
   "avg": 5.3,
   "url": "https://www.nmwelcomehome.com/listing/1110257-5008-redlands-road-nw-albuquerque-nm-87120/brochure",
-  "mls": 1110257
+  "mls": 1110257,
+  "pdf": "brochures/1110257.pdf"
  },
  {
   "id": 15,
@@ -306,7 +321,8 @@
   "total": 16,
   "avg": 5.3,
   "url": "https://www.nmwelcomehome.com/listing/1109643-3413-corona-dr-nw-albuquerque-nm-87120/brochure",
-  "mls": 1109643
+  "mls": 1109643,
+  "pdf": "brochures/1109643.pdf"
  },
  {
   "id": 16,
@@ -328,7 +344,8 @@
   "avg": 4.7,
   "approx": true,
   "url": "https://www.nmwelcomehome.com/listing/1106846-6800-vista-del-norte-road-ne-1722-albuquerque-nm-87113/brochure",
-  "mls": 1106846
+  "mls": 1106846,
+  "pdf": "brochures/1106846.pdf"
  },
  {
   "id": 17,
@@ -347,7 +364,8 @@
   "total": 14,
   "avg": 4.7,
   "url": "https://www.nmwelcomehome.com/listing/1106715-3401-alvarado-drive-ne-albuquerque-nm-87110/brochure",
-  "mls": 1106715
+  "mls": 1106715,
+  "pdf": "brochures/1106715.pdf"
  },
  {
   "id": 18,
@@ -366,7 +384,8 @@
   "total": 12,
   "avg": 4.0,
   "url": "https://www.nmwelcomehome.com/listing/1097220-513-ponderosa-avenue-nw-albuquerque-nm-87107/brochure",
-  "mls": 1097220
+  "mls": 1097220,
+  "pdf": "brochures/1097220.pdf"
  },
  {
   "id": 19,
@@ -387,7 +406,8 @@
   "total": 11,
   "avg": 3.7,
   "url": "https://www.nmwelcomehome.com/listing/1111257-620-san-pedro-drive-se-albuquerque-nm-87108/brochure",
-  "mls": 1111257
+  "mls": 1111257,
+  "pdf": "brochures/1111257.pdf"
  },
  {
   "id": 20,
@@ -406,7 +426,8 @@
   "total": 16,
   "avg": 5.3,
   "url": "https://www.nmwelcomehome.com/listing/1106523-6056-kilmer-avenue-nw-albuquerque-nm-87120/brochure",
-  "mls": 1106523
+  "mls": 1106523,
+  "pdf": "brochures/1106523.pdf"
  },
  {
   "id": 21,
@@ -425,7 +446,8 @@
   "total": 11,
   "avg": 3.7,
   "url": "https://www.nmwelcomehome.com/listing/1112167-701-cardenas-drive-se-albuquerque-nm-87108/brochure",
-  "mls": 1112167
+  "mls": 1112167,
+  "pdf": "brochures/1112167.pdf"
  },
  {
   "id": 22,
@@ -446,7 +468,8 @@
   "total": 15,
   "avg": 5.0,
   "url": "https://www.nmwelcomehome.com/listing/1111626-5801-lowell-street-ne-unit-24b-albuquerque-nm-87111/brochure",
-  "mls": 1111626
+  "mls": 1111626,
+  "pdf": "brochures/1111626.pdf"
  },
  {
   "id": 23,
@@ -465,7 +488,8 @@
   "total": 12,
   "avg": 4.0,
   "url": "https://www.nmwelcomehome.com/listing/1111561-1212-la-poblana-road-nw-albuquerque-nm-87107/brochure",
-  "mls": 1111561
+  "mls": 1111561,
+  "pdf": "brochures/1111561.pdf"
  },
  {
   "id": 24,
@@ -484,7 +508,8 @@
   "total": 16,
   "avg": 5.3,
   "url": "https://www.nmwelcomehome.com/listing/1110872-628-dorado-place-se-albuquerque-nm-87123/brochure",
-  "mls": 1110872
+  "mls": 1110872,
+  "pdf": "brochures/1110872.pdf"
  },
  {
   "id": 25,
@@ -503,7 +528,8 @@
   "total": 16,
   "avg": 5.3,
   "url": "https://www.nmwelcomehome.com/listing/1110691-11907-gable-lane-ne-albuquerque-nm-87123/brochure",
-  "mls": 1110691
+  "mls": 1110691,
+  "pdf": "brochures/1110691.pdf"
  },
  {
   "id": 26,
@@ -522,7 +548,8 @@
   "total": 16,
   "avg": 5.3,
   "url": "https://www.nmwelcomehome.com/listing/1109117-11525-mahlon-avenue-ne-albuquerque-nm-87112/brochure",
-  "mls": 1109117
+  "mls": 1109117,
+  "pdf": "brochures/1109117.pdf"
  },
  {
   "id": 27,
@@ -541,7 +568,8 @@
   "total": 14,
   "avg": 4.7,
   "url": "https://www.nmwelcomehome.com/listing/1110879-309-estancia-drive-nw-albuquerque-nm-87105/brochure",
-  "mls": 1110879
+  "mls": 1110879,
+  "pdf": "brochures/1110879.pdf"
  },
  {
   "id": 28,
@@ -560,7 +588,8 @@
   "total": 11,
   "avg": 3.7,
   "url": "https://www.nmwelcomehome.com/listing/1108368-821-ortiz-drive-se-albuquerque-nm-87108/brochure",
-  "mls": 1108368
+  "mls": 1108368,
+  "pdf": "brochures/1108368.pdf"
  },
  {
   "id": 29,
@@ -579,7 +608,8 @@
   "total": 14,
   "avg": 4.7,
   "url": "https://www.nmwelcomehome.com/listing/1112155-305-san-jose-avenue-se-albuquerque-nm-87102/brochure",
-  "mls": 1112155
+  "mls": 1112155,
+  "pdf": "brochures/1112155.pdf"
  },
  {
   "id": 30,
@@ -598,7 +628,8 @@
   "total": 17,
   "avg": 5.7,
   "url": "https://www.nmwelcomehome.com/listing/1109398-8828-sonoma-avenue-nw-albuquerque-nm-87121/brochure",
-  "mls": 1109398
+  "mls": 1109398,
+  "pdf": "brochures/1109398.pdf"
  },
  {
   "id": 31,
@@ -617,7 +648,8 @@
   "total": 11,
   "avg": 3.7,
   "url": "https://www.nmwelcomehome.com/listing/1105314-633-espanola-street-se-albuquerque-nm-87108/brochure",
-  "mls": 1105314
+  "mls": 1105314,
+  "pdf": "brochures/1105314.pdf"
  },
  {
   "id": 32,
@@ -636,7 +668,8 @@
   "total": 11,
   "avg": 3.7,
   "url": "https://www.nmwelcomehome.com/listing/1104975-8116-kathryn-avenue-se-albuquerque-nm-87108/brochure",
-  "mls": 1104975
+  "mls": 1104975,
+  "pdf": "brochures/1104975.pdf"
  },
  {
   "id": 33,
@@ -655,7 +688,8 @@
   "total": 16,
   "avg": 5.3,
   "url": "https://www.nmwelcomehome.com/listing/1109381-1536-garcia-street-ne-albuquerque-nm-87112/brochure",
-  "mls": 1109381
+  "mls": 1109381,
+  "pdf": "brochures/1109381.pdf"
  },
  {
   "id": 34,
@@ -676,7 +710,8 @@
   "total": 15,
   "avg": 5.0,
   "url": "https://www.nmwelcomehome.com/listing/1111738-3501-juan-tabo-boulevard-ne-d3-albuquerque-nm-87111/brochure",
-  "mls": 1111738
+  "mls": 1111738,
+  "pdf": "brochures/1111738.pdf"
  },
  {
   "id": 35,
@@ -695,7 +730,8 @@
   "total": 14,
   "avg": 4.7,
   "url": "https://www.nmwelcomehome.com/listing/1110933-2715-bryan-court-sw-albuquerque-nm-87105/brochure",
-  "mls": 1110933
+  "mls": 1110933,
+  "pdf": "brochures/1110933.pdf"
  },
  {
   "id": 36,
@@ -714,7 +750,8 @@
   "total": 17,
   "avg": 5.7,
   "url": "https://www.nmwelcomehome.com/listing/1109180-10811-beaker-road-sw-albuquerque-nm-87121/brochure",
-  "mls": 1109180
+  "mls": 1109180,
+  "pdf": "brochures/1109180.pdf"
  },
  {
   "id": 37,
@@ -733,7 +770,8 @@
   "total": 11,
   "avg": 3.7,
   "url": "https://www.nmwelcomehome.com/listing/1092938-220-shawnee-court-se-albuquerque-nm-87108/brochure",
-  "mls": 1092938
+  "mls": 1092938,
+  "pdf": "brochures/1092938.pdf"
  },
  {
   "id": 38,
@@ -752,7 +790,8 @@
   "total": 16,
   "avg": 5.3,
   "url": "https://www.nmwelcomehome.com/listing/1110432-16-westlake-drive-ne-albuquerque-nm-87112/brochure",
-  "mls": 1110432
+  "mls": 1110432,
+  "pdf": "brochures/1110432.pdf"
  },
  {
   "id": 39,
@@ -771,7 +810,8 @@
   "total": 17,
   "avg": 5.7,
   "url": "https://www.nmwelcomehome.com/listing/1110983-425-60th-street-sw-albuquerque-nm-87121/brochure",
-  "mls": 1110983
+  "mls": 1110983,
+  "pdf": "brochures/1110983.pdf"
  },
  {
   "id": 40,
@@ -790,7 +830,8 @@
   "total": 14,
   "avg": 4.7,
   "url": "https://www.nmwelcomehome.com/listing/1109091-935-manzano-street-ne-albuquerque-nm-87110/brochure",
-  "mls": 1109091
+  "mls": 1109091,
+  "pdf": "brochures/1109091.pdf"
  },
  {
   "id": 41,
@@ -809,7 +850,8 @@
   "total": 14,
   "avg": 4.7,
   "url": "https://www.nmwelcomehome.com/listing/1096617-231-56th-street-nw-albuquerque-nm-87105/brochure",
-  "mls": 1096617
+  "mls": 1096617,
+  "pdf": "brochures/1096617.pdf"
  },
  {
   "id": 42,
@@ -828,6 +870,7 @@
   "total": 15,
   "avg": 5.0,
   "url": "https://www.nmwelcomehome.com/listing/1109771-4704-norma-drive-ne-albuquerque-nm-87109/brochure",
-  "mls": 1109771
+  "mls": 1109771,
+  "pdf": "brochures/1109771.pdf"
  }
 ]
