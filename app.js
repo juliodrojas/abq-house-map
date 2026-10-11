@@ -131,8 +131,14 @@
     if (l.year_built) facts.push("Built " + l.year_built);
     card.innerHTML =
       '<button class="close-x" id="card-x">✕</button>' +
-      '<div class="photo"><img src="' + l.photos[0] + '" alt="' + esc(l.address) + '" loading="lazy">' +
-      '<span class="status ' + stCls + '">' + esc(l.status || "") + "</span></div>" +
+      '<div class="photo"><img id="card-img" src="' + l.photos[0] + '" alt="' + esc(l.address) + '">' +
+      '<span class="status ' + stCls + '">' + esc(l.status || "") + "</span>" +
+      (l.photos.length > 1
+        ? '<button class="car-btn prev" id="car-prev">‹</button>' +
+          '<button class="car-btn next" id="car-next">›</button>' +
+          '<span class="car-count" id="car-count">1 / ' + l.photos.length + "</span>"
+        : "") +
+      "</div>" +
       '<div class="body"><div class="price-row"><div class="price">' + fmt(l.price) + "</div></div>" +
       "<h2>" + esc(l.address) + "</h2>" +
       '<div class="meta">' + l.beds_baths + " bd/ba · " + l.sqft.toLocaleString() +
@@ -147,6 +153,17 @@
       flagHtml + "</div>";
     card.classList.remove("hidden");
     document.getElementById("card-x").onclick = function () { card.classList.add("hidden"); };
+    var prev = document.getElementById("car-prev"), next = document.getElementById("car-next");
+    if (prev && next) {
+      var idx = 0, img = document.getElementById("card-img"), cnt = document.getElementById("car-count");
+      var show = function (i) {
+        idx = (i + l.photos.length) % l.photos.length;
+        img.src = l.photos[idx];
+        cnt.textContent = (idx + 1) + " / " + l.photos.length;
+      };
+      prev.onclick = function (e) { e.stopPropagation(); show(idx - 1); };
+      next.onclick = function (e) { e.stopPropagation(); show(idx + 1); };
+    }
     var more = document.getElementById("desc-more");
     if (more) more.onclick = function () {
       var d = document.getElementById("card-desc");
