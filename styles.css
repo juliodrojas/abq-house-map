@@ -33,49 +33,36 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Ro
 .dot{display:inline-block;width:11px;height:11px;border-radius:50%;margin-right:5px;border:1.5px solid rgba(0,0,0,.25)}
 .dot.store{background:#3b82f6;border-radius:3px}
 .fine{margin-top:10px;font-size:11px;color:#9ca3af;line-height:1.4}
-#card{position:absolute;left:12px;bottom:12px;z-index:10;width:min(360px,calc(100% - 24px));
-  background:#fff;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.22);overflow:hidden}
-#card.hidden{display:none}
-#card .photo{height:170px;position:relative;background:#e5e7eb;overflow:hidden}
-#card .photo img{width:100%;height:100%;object-fit:cover;display:block}
-#card .status{position:absolute;top:10px;left:10px;padding:4px 10px;border-radius:999px;
+#detail{position:absolute;left:12px;top:64px;bottom:12px;z-index:10;width:min(400px,calc(100% - 24px));
+  background:#fff;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.22);overflow:hidden;
+  display:flex;flex-direction:column}
+#detail .pd-tabs{display:flex;gap:8px;padding:10px 12px;border-bottom:1px solid #e5e7eb;background:#fff}
+#detail .pd-tabs button{flex:1;padding:9px;border-radius:10px;border:1.5px solid #d1d5db;background:#fff;
+  font-size:14px;font-weight:700;color:#4b5563;cursor:pointer}
+#detail .pd-tabs button.on{background:#1f2937;color:#fff;border-color:#1f2937}
+#detail #pd-body{overflow:auto;flex:1;position:relative}
+#detail .close-x{position:absolute;top:12px;right:12px;z-index:3;width:34px;height:34px;border-radius:50%;
+  border:0;background:rgba(255,255,255,.92);font-size:15px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+#detail .photo{height:230px;position:relative;background:#e5e7eb;overflow:hidden;flex:none}
+#detail .photo img{width:100%;height:100%;object-fit:cover;display:block}
+#detail .status{position:absolute;top:10px;left:10px;padding:4px 10px;border-radius:999px;
   font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;color:#fff}
-#card .status.active{background:#16a34a}
-#card .status.pending{background:#d97706}
-#card .car-btn{position:absolute;top:50%;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;
-  border:0;background:rgba(0,0,0,.45);color:#fff;font-size:20px;line-height:1;cursor:pointer}
-#card .car-btn.prev{left:8px}
-#card .car-btn.next{right:8px}
-#card .car-count{position:absolute;bottom:8px;right:8px;background:rgba(0,0,0,.55);color:#fff;
-  font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px}
-#card .price-row{display:flex;align-items:center;justify-content:space-between}
-#card .desc{font-size:13px;color:#4b5563;margin:8px 0 2px;line-height:1.45}
-#card .more{background:none;border:0;color:#2563eb;font-size:13px;font-weight:700;cursor:pointer;padding:0;margin-bottom:6px}
-#card .facts{font-size:12px;color:#6b7280;background:#f3f4f6;border-radius:8px;padding:7px 10px;margin:8px 0}
-#card .office{font-size:12px;color:#374151;font-weight:600;margin:6px 0 0}
-#card .inquiry{font-size:13px;margin-top:6px}
-#card .inquiry a{color:#2563eb;font-weight:700;text-decoration:none}
-/* fullscreen lightbox */
-#lightbox{position:fixed;inset:0;z-index:100;background:rgba(10,12,18,.94);display:flex;
-  flex-direction:column;align-items:center;justify-content:center}
-#lightbox .lb-x{position:absolute;top:12px;right:12px;width:38px;height:38px;border-radius:50%;border:0;
-  background:rgba(255,255,255,.15);color:#fff;font-size:17px;cursor:pointer;z-index:2}
-#lightbox .lb-tabs{position:absolute;top:12px;left:12px;display:flex;gap:6px;z-index:2}
-#lightbox .lb-tabs button{padding:9px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.3);
-  background:transparent;color:#fff;font-size:14px;font-weight:700;cursor:pointer}
-#lightbox .lb-tabs button.on{background:#fff;color:#111}
-#lb-body{width:100%;height:100%;display:flex;align-items:center;justify-content:center;position:relative}
-#lb-body img{max-width:94vw;max-height:78vh;object-fit:contain;border-radius:8px}
-#lightbox .lb-btn{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;
-  border:0;background:rgba(255,255,255,.16);color:#fff;font-size:26px;cursor:pointer;z-index:2}
-#lightbox .lb-btn.prev{left:10px}
-#lightbox .lb-btn.next{right:10px}
-#lightbox .lb-count{position:absolute;bottom:64px;right:16px;background:rgba(0,0,0,.55);color:#fff;
+#detail .status.active{background:#16a34a}
+#detail .status.pending{background:#d97706}
+#detail .car-btn{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;
+  border:0;background:rgba(255,255,255,.88);font-size:21px;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+#detail .car-btn.prev{left:10px}
+#detail .car-btn.next{right:10px}
+#detail .car-count{position:absolute;bottom:10px;right:10px;background:rgba(0,0,0,.55);color:#fff;
   font-size:12px;font-weight:700;padding:4px 11px;border-radius:999px}
-#lightbox .lb-bar{position:absolute;bottom:0;left:0;right:0;padding:14px;text-align:center;color:#e5e7eb;font-size:14px}
+#detail .desc{font-size:13px;color:#4b5563;margin:8px 0 2px;line-height:1.45}
+#detail .more{background:none;border:0;color:#2563eb;font-size:13px;font-weight:700;cursor:pointer;padding:0;margin-bottom:6px}
+#detail .facts{font-size:12px;color:#6b7280;background:#f3f4f6;border-radius:8px;padding:7px 10px;margin:8px 0}
+#detail .office{font-size:12px;color:#374151;font-weight:600;margin:6px 0 0}
+#detail .inquiry{font-size:13px;margin-top:6px}
+#detail .inquiry a{color:#2563eb;font-weight:700;text-decoration:none}
 /* scoring report (back of the card) */
-.lb-report{width:min(680px,94vw);max-height:80vh;overflow:auto;background:#fff;border-radius:16px;
-  padding:22px;color:#1f2937;text-align:left}
+.lb-report{padding:16px;color:#1f2937;text-align:left}
 .lb-report h3{font-size:20px;margin-bottom:2px}
 .lb-report .rp-addr{font-size:13px;color:#6b7280;margin-bottom:14px}
 .lb-report .rp-addr .active{color:#16a34a;font-weight:800}
@@ -93,23 +80,21 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Ro
 .rp-cols li{margin:4px 0}
 .rp-fine{font-size:11px;color:#9ca3af;border-top:1px solid #e5e7eb;padding-top:10px}
 @media (max-width:640px){.rp-cols{grid-template-columns:1fr}}
-#card .body{padding:14px}
-#card h2{font-size:17px;margin-bottom:2px}
-#card .price{font-size:22px;font-weight:800;color:#15803d}
-#card .meta{font-size:13px;color:#4b5563;margin:6px 0}
-#card .scores{display:flex;gap:6px;margin:8px 0}
-#card .score{flex:1;text-align:center;background:#f3f4f6;border-radius:8px;padding:6px 2px;font-size:11px}
-#card .score b{display:block;font-size:16px}
-#card .flags{font-size:12px;color:#b45309;font-weight:700;margin-top:4px}
-#card .actions{display:flex;gap:8px;margin-top:10px}
-#card .actions a{flex:1;text-align:center;padding:9px;border-radius:9px;font-size:14px;font-weight:700;
-  text-decoration:none;background:#1f2937;color:#fff}
-#card .close-x{position:absolute;top:8px;right:8px;background:rgba(255,255,255,.9);border:0;border-radius:50%;
-  width:30px;height:30px;font-size:15px;cursor:pointer}
-#card{position:absolute}
+#detail .body{padding:14px}
+#detail h2{font-size:17px;margin-bottom:2px}
+#detail .price{font-size:22px;font-weight:800;color:#15803d}
+#detail .meta{font-size:13px;color:#4b5563;margin:6px 0}
+#detail .scores{display:flex;gap:6px;margin:8px 0}
+#detail .score{flex:1;text-align:center;background:#f3f4f6;border-radius:8px;padding:6px 2px;font-size:11px}
+#detail .score b{display:block;font-size:16px}
+#detail .flags{font-size:12px;color:#b45309;font-weight:700;margin-top:4px}
 .maplibregl-popup-content{border-radius:12px;padding:10px 12px;font-size:13px}
 @media (max-width:640px){
   .brand{font-size:15px}
   #panel{top:auto;bottom:0;right:0;left:0;width:100%;border-radius:16px 16px 0 0;transform:translateY(110%)}
   #panel.open{transform:none}
+}
+
+@media (max-width:640px){
+  #detail{left:0;right:0;top:auto;bottom:0;width:100%;max-height:76dvh;border-radius:18px 18px 0 0}
 }

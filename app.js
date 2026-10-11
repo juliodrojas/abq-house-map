@@ -113,144 +113,99 @@
 
   function fmt(n) { return "$" + n.toLocaleString("en-US"); }
 
-  function openCard(l) {
-    var card = document.getElementById("card");
+  function openPanel(l) {
+    closePanel();
+    var p = document.createElement("aside");
+    p.id = "detail";
     var stCls = (l.status || "").toLowerCase() === "pending" ? "pending" : "active";
     var flagHtml = l.flags.length
       ? '<div class="flags">⚠ ' + l.flags.join(" · ").toUpperCase() + (l.approx ? " · PIN APPROXIMATE" : "") + "</div>"
       : (l.approx ? '<div class="flags">⚠ PIN APPROXIMATE</div>' : "");
     var short = l.desc && l.desc.length > 150 ? l.desc.slice(0, 150) + "…" : (l.desc || "");
     var descHtml = l.desc
-      ? '<p class="desc" id="card-desc">' + esc(short) + "</p>" +
-        (l.desc.length > 150 ? '<button class="more" id="desc-more">more</button>' : "")
+      ? '<p class="desc" id="pd-desc">' + esc(short) + "</p>" +
+        (l.desc.length > 150 ? '<button class="more" id="pd-more">more</button>' : "")
       : "";
     var facts = [];
     if (l.dom) facts.push("DOM " + l.dom);
     if (l.taxes) facts.push("Taxes " + l.taxes);
     if (l.pp_sqft) facts.push(l.pp_sqft + "/sqft");
     if (l.year_built) facts.push("Built " + l.year_built);
-    card.innerHTML =
-      '<button class="close-x" id="card-x">✕</button>' +
-      '<div class="photo"><img id="card-img" src="' + l.photos[0] + '" alt="' + esc(l.address) + '">' +
-      '<span class="status ' + stCls + '">' + esc(l.status || "") + "</span>" +
-      (l.photos.length > 1
-        ? '<button class="car-btn prev" id="car-prev">‹</button>' +
-          '<button class="car-btn next" id="car-next">›</button>' +
-          '<span class="car-count" id="car-count">1 / ' + l.photos.length + "</span>"
-        : "") +
-      "</div>" +
-      '<div class="body"><div class="price-row"><div class="price">' + fmt(l.price) + "</div></div>" +
-      "<h2>" + esc(l.address) + "</h2>" +
-      '<div class="meta">' + l.beds_baths + " bd/ba · " + l.sqft.toLocaleString() +
-      " sqft · " + l.zip + "<br>" + esc(l.cluster) + "</div>" +
-      '<div class="scores">' +
-      '<div class="score"><b>' + l.v1 + '</b>amenity</div>' +
-      '<div class="score"><b>' + l.v2 + '</b>trend</div>' +
-      '<div class="score"><b>' + l.v3 + '</b>safety</div>' +
-      '<div class="score"><b>' + l.total + '</b>total</div></div>' +
-      descHtml +
-      (facts.length ? '<div class="facts">' + facts.map(esc).join(" · ") + "</div>" : "") +
-      (l.office ? '<div class="office">Listed by ' + esc(l.office) + "</div>" : "") +
-      '<div class="inquiry">Inquiries: <a href="tel:+15059072472">(505) 907-2472</a></div>' +
-      flagHtml + "</div>";
-    card.classList.remove("hidden");
-    document.getElementById("card-x").onclick = function () { card.classList.add("hidden"); };
-    var prev = document.getElementById("car-prev"), next = document.getElementById("car-next");
-    var idx = 0, img = document.getElementById("card-img"), cnt = document.getElementById("car-count");
-    var show = function (i) {
-      idx = (i + l.photos.length) % l.photos.length;
-      img.src = l.photos[idx];
-      if (cnt) cnt.textContent = (idx + 1) + " / " + l.photos.length;
-    };
-    if (prev && next) {
-      prev.onclick = function (e) { e.stopPropagation(); show(idx - 1); };
-      next.onclick = function (e) { e.stopPropagation(); show(idx + 1); };
+    p.innerHTML =
+      '<button class="close-x" id="pd-x">✕</button>' +
+      '<div class="pd-tabs"><button id="pd-tab-photos" class="on">📷 Photos</button>' +
+      '<button id="pd-tab-report">📋 Report</button></div>' +
+      '<div id="pd-body"></div>';
+    document.getElementById("app").appendChild(p);
+
+    var body = document.getElementById("pd-body");
+    var idx = 0;
+    function photosView() {
+      body.innerHTML =
+        '<div class="photo"><img id="pd-img" src="' + l.photos[idx] + '" alt="' + esc(l.address) + '">' +
+        '<span class="status ' + stCls + '">' + esc(l.status || "") + "</span>" +
+        (l.photos.length > 1
+          ? '<button class="car-btn prev" id="pd-prev">‹</button>' +
+            '<button class="car-btn next" id="pd-next">›</button>' +
+            '<span class="car-count" id="pd-count">' + (idx + 1) + " / " + l.photos.length + "</span>"
+          : "") +
+        "</div>" +
+        '<div class="body"><div class="price">' + fmt(l.price) + "</div>" +
+        "<h2>" + esc(l.address) + "</h2>" +
+        '<div class="meta">' + l.beds_baths + " bd/ba · " + l.sqft.toLocaleString() +
+        " sqft · " + l.zip + "<br>" + esc(l.cluster) + "</div>" +
+        '<div class="scores">' +
+        '<div class="score"><b>' + l.v1 + '</b>amenity</div>' +
+        '<div class="score"><b>' + l.v2 + '</b>trend</div>' +
+        '<div class="score"><b>' + l.v3 + '</b>safety</div>' +
+        '<div class="score"><b>' + l.total + '</b>total</div></div>' +
+        descHtml +
+        (facts.length ? '<div class="facts">' + facts.map(esc).join(" · ") + "</div>" : "") +
+        (l.office ? '<div class="office">Listed by ' + esc(l.office) + "</div>" : "") +
+        '<div class="inquiry">Inquiries: <a href="tel:+15059072472">(505) 907-2472</a></div>' +
+        flagHtml + "</div>";
+      var show = function (d) {
+        idx = (idx + d + l.photos.length) % l.photos.length;
+        document.getElementById("pd-img").src = l.photos[idx];
+        var c = document.getElementById("pd-count");
+        if (c) c.textContent = (idx + 1) + " / " + l.photos.length;
+      };
+      var pv = document.getElementById("pd-prev"), nx = document.getElementById("pd-next");
+      if (pv && nx) {
+        pv.onclick = function (e) { e.stopPropagation(); show(-1); };
+        nx.onclick = function (e) { e.stopPropagation(); show(1); };
+      }
+      var more = document.getElementById("pd-more");
+      if (more) more.onclick = function () {
+        var d = document.getElementById("pd-desc");
+        var expanded = d.dataset.full === "1";
+        d.textContent = expanded ? short : l.desc;
+        d.dataset.full = expanded ? "" : "1";
+        more.textContent = expanded ? "more" : "less";
+      };
     }
-    // fullscreen gallery on photo tap
-    img.style.cursor = "zoom-in";
-    img.onclick = function () { openLightbox(l, idx); };
-    var more = document.getElementById("desc-more");
-    if (more) more.onclick = function () {
-      var d = document.getElementById("card-desc");
-      var expanded = d.dataset.full === "1";
-      d.textContent = expanded ? short : l.desc;
-      d.dataset.full = expanded ? "" : "1";
-      more.textContent = expanded ? "more" : "less";
+    function reportView() {
+      body.innerHTML = '<div class="lb-report">' + buildReport(l) + "</div>";
+    }
+    document.getElementById("pd-tab-photos").onclick = function () {
+      this.classList.add("on");
+      document.getElementById("pd-tab-report").classList.remove("on");
+      photosView();
     };
+    document.getElementById("pd-tab-report").onclick = function () {
+      this.classList.add("on");
+      document.getElementById("pd-tab-photos").classList.remove("on");
+      reportView();
+    };
+    document.getElementById("pd-x").onclick = closePanel;
+    photosView();
+  }
+  function closePanel() {
+    var p = document.getElementById("detail");
+    if (p) p.remove();
   }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) {
     return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
-
-  // fullscreen photo gallery (+ scoring report on the back)
-  function openLightbox(l, startIdx) {
-    closeLightbox();
-    var lb = document.createElement("div");
-    lb.id = "lightbox";
-    lb.innerHTML =
-      '<button class="lb-x" id="lb-x">✕</button>' +
-      '<div class="lb-tabs"><button id="lb-tab-photos" class="on">📷 Photos</button>' +
-      '<button id="lb-tab-report">📋 Report</button></div>' +
-      '<div id="lb-body"></div>' +
-      '<div class="lb-bar"><span class="lb-addr">' + esc(l.address) + " · " + fmt(l.price) + "</span></div>";
-    document.body.appendChild(lb);
-    var body = document.getElementById("lb-body");
-    var i = startIdx;
-
-    function photoView() {
-      body.innerHTML =
-        '<button class="lb-btn prev" id="lb-prev">‹</button>' +
-        '<img id="lb-img" src="' + l.photos[i] + '" alt="' + esc(l.address) + '">' +
-        '<button class="lb-btn next" id="lb-next">›</button>' +
-        '<span class="lb-count" id="lb-count">' + (i + 1) + " / " + l.photos.length + "</span>";
-      var go = function (d) {
-        i = (i + d + l.photos.length) % l.photos.length;
-        document.getElementById("lb-img").src = l.photos[i];
-        document.getElementById("lb-count").textContent = (i + 1) + " / " + l.photos.length;
-      };
-      document.getElementById("lb-prev").onclick = function (e) { e.stopPropagation(); go(-1); };
-      document.getElementById("lb-next").onclick = function (e) { e.stopPropagation(); go(1); };
-      lbKeys.go = go;
-    }
-
-    function reportView() {
-      body.innerHTML = '<div class="lb-report">' + buildReport(l) + "</div>";
-      lbKeys.go = null;
-    }
-
-    document.getElementById("lb-tab-photos").onclick = function () {
-      this.classList.add("on");
-      document.getElementById("lb-tab-report").classList.remove("on");
-      photoView();
-    };
-    document.getElementById("lb-tab-report").onclick = function () {
-      this.classList.add("on");
-      document.getElementById("lb-tab-photos").classList.remove("on");
-      reportView();
-    };
-    document.getElementById("lb-x").onclick = closeLightbox;
-    lb.addEventListener("click", function (e) { if (e.target === lb) closeLightbox(); });
-    document.addEventListener("keydown", lbKeys);
-    var sx = 0;
-    lb.addEventListener("touchstart", function (e) { sx = e.touches[0].clientX; }, { passive: true });
-    lb.addEventListener("touchend", function (e) {
-      var dx = e.changedTouches[0].clientX - sx;
-      if (Math.abs(dx) > 40 && lbKeys.go) lbKeys.go(dx > 0 ? -1 : 1);
-    }, { passive: true });
-    photoView();
-  }
-  function lbKeys(e) {
-    if (!document.getElementById("lightbox")) { document.removeEventListener("keydown", lbKeys); return; }
-    if (e.key === "Escape") closeLightbox();
-    if (lbKeys.go) {
-      if (e.key === "ArrowLeft") lbKeys.go(-1);
-      if (e.key === "ArrowRight") lbKeys.go(1);
-    }
-  }
-  function closeLightbox() {
-    var lb = document.getElementById("lightbox");
-    if (lb) lb.remove();
-    document.removeEventListener("keydown", lbKeys);
-  }
 
   function buildReport(l) {
     var R = (state.reports && state.reports[l.cluster]) || {};
@@ -300,7 +255,7 @@
   function wire() {
     map.on("click", "houses", function (e) {
       var l = state.data[e.features[0].properties.idx];
-      openCard(l);
+      openPanel(l);
     });
     map.on("click", "stores", function (e) {
       var s = state.stores[e.features[0].properties.idx];
@@ -325,7 +280,7 @@
         if ((l.address + " " + l.cluster + " " + l.zip).toLowerCase().indexOf(q) >= 0)
           hits.push({ t: "🏠", label: l.address + " — " + fmt(l.price), fn: function () {
             map.flyTo({ center: [l.lon, l.lat], zoom: 15, pitch: state.is3d ? 55 : 0 });
-            openCard(l);
+            openPanel(l);
           }});
       });
       state.stores.forEach(function (s) {
