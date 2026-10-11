@@ -150,6 +150,8 @@
       '<div class="score"><b>' + l.total + '</b>total</div></div>' +
       descHtml +
       (facts.length ? '<div class="facts">' + facts.map(esc).join(" · ") + "</div>" : "") +
+      (l.office ? '<div class="office">Listed by ' + esc(l.office) + "</div>" : "") +
+      '<div class="inquiry">Inquiries: <a href="tel:+15059072472">(505) 907-2472</a></div>' +
       flagHtml + "</div>";
     card.classList.remove("hidden");
     document.getElementById("card-x").onclick = function () { card.classList.add("hidden"); };
