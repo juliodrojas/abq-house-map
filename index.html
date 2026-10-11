@@ -57,9 +57,10 @@ footer a{color:#6b7280}
 <div class="hero">
   <img src="logo.png" alt="HighlandAP logo" style="width:92px;height:92px;border-radius:22px;box-shadow:0 8px 24px rgba(0,0,0,.35);margin-bottom:14px">
   <div class="badge">🏠 ABQ rental-investment research</div>
-  <h1><span class="wave">👋</span> Welcome, Julio</h1>
+  <h1><span class="wave">👋</span> <span id="greet-word">Welcome</span><span id="greet-name"></span></h1>
   <p class="sub"><strong>HighlandAP</strong> — every 3-bedroom house in Albuquerque between
   $220K and $260K, mapped in 3D, scored, and ready to explore.</p>
+  <p style="margin-top:10px;font-size:13px;color:#9fd8d2">Not <span id="who">Julio</span>? <a href="#" id="set-name" style="color:#fff;font-weight:700">Set your name</a></p>
   <div class="cta-row">
     <a class="btn primary" href="map.html">Open the 3D map 🗺️</a>
     <a class="btn ghost" href="#scores">How the scores work</a>
@@ -124,5 +125,28 @@ footer a{color:#6b7280}
   nothing is for sale and no money is made from this website.<br>
   Built for Julio by Emiliano Zapata · <a href="https://github.com/juliodrojas/abq-house-map">GitHub</a>
 </footer>
+<script>
+(function () {
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) {
+    return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function clean(n) { return (n || "").trim().slice(0, 24); }
+  function current() {
+    var q = clean(new URLSearchParams(location.search).get("name"));
+    if (q) { try { localStorage.setItem("hap_name", q); } catch (e) {} return q; }
+    try { return clean(localStorage.getItem("hap_name")) || "Julio"; } catch (e) { return "Julio"; }
+  }
+  function render() {
+    var n = current();
+    document.getElementById("greet-name").textContent = ", " + n;
+    document.getElementById("who").textContent = n;
+  }
+  document.getElementById("set-name").onclick = function (e) {
+    e.preventDefault();
+    var n = clean(prompt("Your name:", current()));
+    if (n) { try { localStorage.setItem("hap_name", n); } catch (e) {} render(); }
+  };
+  render();
+})();
+</script>
 </body>
 </html>
