@@ -1,0 +1,62 @@
+{
+ "SW Mesa / Westgate": {
+  "safety": "Violent crime ~1.4x the US average (Westgate Heights, FBI 2024); property crime 7% BELOW national. Best safety score in the set.",
+  "trend": "Prices flat: -0.2% YoY (Redfin). Zillow forecasts +2.5% ahead \u2014 shown as disagreement, not averaged.",
+  "amenity": "Smith's in-zip; CUTC transit hub + ART; UNM ~20-25 min; hospital 10-20 min; pharmacy in-zip."
+ },
+ "Westside / Ladera": {
+  "safety": "Roughly in line with the ABQ average (~2.5x national violent). CrimeGrade C-. Safety is this cluster's weak spot.",
+  "trend": "Strongest measured trend in the set: +3.0% YoY (Redfin, single source).",
+  "amenity": "Smith's in-zip; Northwest transit hub; UNM ~22-28 min; Lovelace Westside hospital very close; pharmacy in-zip."
+ },
+ "SE / Four Hills fringe": {
+  "safety": "Mixed pocket: ~2.0-2.5x national violent (Singing Arrow F vs Four Hills B). Verify at block level.",
+  "trend": "Thin data (2 listings); priced ~38% below the area's average list \u2014 a value cushion.",
+  "amenity": "Smith's on Tramway in-zip; ART 777 terminus nearby; UNM ~16-20 min; hospital 10-20 min."
+ },
+ "Far NE / Academy": {
+  "safety": "Violent ~1.9x national (Academy Acres North). Mid-pack safety.",
+  "trend": "No YoY figure; several listings cut prices (soft resale), but listings sit 21-32% below area average.",
+  "amenity": "Smith's in-area; ART stations nearby; UNM ~18-22 min; hospital 10-15 min."
+ },
+ "NE Heights condos": {
+  "safety": "Violent ~1.9x national (Academy Acres North). Mid-pack.",
+  "trend": "Condo resales look soft; thin data. Condos don't compare cleanly to houses on trend.",
+  "amenity": "Strong daily amenities: groceries, transit and pharmacy all close."
+ },
+ "NE Heights": {
+  "safety": "No neighborhood-specific figures (data gap) \u2014 proxied ~1.9x national from adjacent areas. Low confidence.",
+  "trend": "Single listing at $220K, ~41% below area home values \u2014 likely strong demand at this price.",
+  "amenity": "Weakest amenity score in the set: supermarket 10-15 min, sparse transit; UNM ~14-17 min; hospital close."
+ },
+ "South Valley / Arenal": {
+  "safety": "Violent ~2.1x national (South Valley CDP) \u2014 above the ABQ average. Check the block.",
+  "trend": "Median slipped $260K to $253K Jul-Aug 2026 (softening), but only 29-44 days on market \u2014 still tight.",
+  "amenity": "Smith's/Price Rite in-zip; Route 53 + microtransit; UNM ~18-22 min; hospital 10-20 min."
+ },
+ "Uptown / Mid-Heights": {
+  "safety": "The red flag: Uptown grades F/F/F, violent est. ~3-4x national. Lowest safety score in the set.",
+  "trend": "No YoY; all listings at least 15% below area home values \u2014 priced with a cushion.",
+  "amenity": "Best-connected: multiple Smith's, Uptown transit hub + ART, UNM ~10-12 min, Presbyterian hospital close."
+ },
+ "Barelas / S. Broadway": {
+  "safety": "South Broadway violent ~2.9x national; adjacent Barelas worse (~4x). Block-level check essential.",
+  "trend": "This house's own value rose +3.6% YoY per HouseCanary ($231K to $239K) \u2014 appreciating despite the crime overhang.",
+  "amenity": "Alvarado transit hub + ART; UNM ~8-10 min; Presbyterian very close. Only one verified supermarket ~10 min."
+ },
+ "North ABQ Acres condo": {
+  "safety": "No violent-crime figure published (data gap); proxied suburban ~1.5-2x national. Low confidence.",
+  "trend": "Very thin \u2014 single condo, one $10K cut. Limited data.",
+  "amenity": "Smith's in-zip and pharmacy close; transit sparse; UNM ~16-20 min; hospital ~15 min."
+ },
+ "Near North Valley": {
+  "safety": "Worst in the set: violent crime ~5x national per sources (some conflict in data \u2014 block-level verification essential).",
+  "trend": "No YoY; two of three listings cut prices (one down $13K); listings 23-28% below area values.",
+  "amenity": "Decent coverage: groceries, transit, UNM and hospital all within reach."
+ },
+ "SE Heights": {
+  "safety": "Lowest score: Trumbull-area violent ~4.4x national (CrimeGrade). The area's crime discount is real.",
+  "trend": "This house's value +3.4% YoY per HouseCanary ($239K to $247K); area median (Trumbull ~$210K) sits below these listings.",
+  "amenity": "ART adjacent; UNM ~12-15 min; Presbyterian very close; supermarket 10-15 min."
+ }
+}

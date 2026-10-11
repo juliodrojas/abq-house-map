@@ -55,6 +55,44 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Ro
 #card .office{font-size:12px;color:#374151;font-weight:600;margin:6px 0 0}
 #card .inquiry{font-size:13px;margin-top:6px}
 #card .inquiry a{color:#2563eb;font-weight:700;text-decoration:none}
+/* fullscreen lightbox */
+#lightbox{position:fixed;inset:0;z-index:100;background:rgba(10,12,18,.94);display:flex;
+  flex-direction:column;align-items:center;justify-content:center}
+#lightbox .lb-x{position:absolute;top:12px;right:12px;width:38px;height:38px;border-radius:50%;border:0;
+  background:rgba(255,255,255,.15);color:#fff;font-size:17px;cursor:pointer;z-index:2}
+#lightbox .lb-tabs{position:absolute;top:12px;left:12px;display:flex;gap:6px;z-index:2}
+#lightbox .lb-tabs button{padding:9px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.3);
+  background:transparent;color:#fff;font-size:14px;font-weight:700;cursor:pointer}
+#lightbox .lb-tabs button.on{background:#fff;color:#111}
+#lb-body{width:100%;height:100%;display:flex;align-items:center;justify-content:center;position:relative}
+#lb-body img{max-width:94vw;max-height:78vh;object-fit:contain;border-radius:8px}
+#lightbox .lb-btn{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;
+  border:0;background:rgba(255,255,255,.16);color:#fff;font-size:26px;cursor:pointer;z-index:2}
+#lightbox .lb-btn.prev{left:10px}
+#lightbox .lb-btn.next{right:10px}
+#lightbox .lb-count{position:absolute;bottom:64px;right:16px;background:rgba(0,0,0,.55);color:#fff;
+  font-size:12px;font-weight:700;padding:4px 11px;border-radius:999px}
+#lightbox .lb-bar{position:absolute;bottom:0;left:0;right:0;padding:14px;text-align:center;color:#e5e7eb;font-size:14px}
+/* scoring report (back of the card) */
+.lb-report{width:min(680px,94vw);max-height:80vh;overflow:auto;background:#fff;border-radius:16px;
+  padding:22px;color:#1f2937;text-align:left}
+.lb-report h3{font-size:20px;margin-bottom:2px}
+.lb-report .rp-addr{font-size:13px;color:#6b7280;margin-bottom:14px}
+.lb-report .rp-addr .active{color:#16a34a;font-weight:800}
+.lb-report .rp-addr .pending{color:#d97706;font-weight:800}
+.rp-row{margin-bottom:14px}
+.rp-head{display:flex;justify-content:space-between;font-weight:700;font-size:14px;margin-bottom:5px}
+.rp-bar{height:8px;background:#e5e7eb;border-radius:99px;overflow:hidden;margin-bottom:6px}
+.rp-bar i{display:block;height:100%;background:linear-gradient(90deg,#ef4444,#eab308,#22c55e);border-radius:99px}
+.rp-row p{font-size:13px;color:#4b5563;line-height:1.5}
+.rp-stores{list-style:none;font-size:13px;color:#4b5563}
+.rp-stores li{margin:3px 0}
+.rp-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:6px 0 10px}
+.rp-cols h4{font-size:14px;margin-bottom:6px}
+.rp-cols ul{font-size:13px;color:#4b5563;padding-left:18px}
+.rp-cols li{margin:4px 0}
+.rp-fine{font-size:11px;color:#9ca3af;border-top:1px solid #e5e7eb;padding-top:10px}
+@media (max-width:640px){.rp-cols{grid-template-columns:1fr}}
 #card .body{padding:14px}
 #card h2{font-size:17px;margin-bottom:2px}
 #card .price{font-size:22px;font-weight:800;color:#15803d}

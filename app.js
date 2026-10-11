@@ -156,16 +156,19 @@
     card.classList.remove("hidden");
     document.getElementById("card-x").onclick = function () { card.classList.add("hidden"); };
     var prev = document.getElementById("car-prev"), next = document.getElementById("car-next");
+    var idx = 0, img = document.getElementById("card-img"), cnt = document.getElementById("car-count");
+    var show = function (i) {
+      idx = (i + l.photos.length) % l.photos.length;
+      img.src = l.photos[idx];
+      if (cnt) cnt.textContent = (idx + 1) + " / " + l.photos.length;
+    };
     if (prev && next) {
-      var idx = 0, img = document.getElementById("card-img"), cnt = document.getElementById("car-count");
-      var show = function (i) {
-        idx = (i + l.photos.length) % l.photos.length;
-        img.src = l.photos[idx];
-        cnt.textContent = (idx + 1) + " / " + l.photos.length;
-      };
       prev.onclick = function (e) { e.stopPropagation(); show(idx - 1); };
       next.onclick = function (e) { e.stopPropagation(); show(idx + 1); };
     }
+    // fullscreen gallery on photo tap
+    img.style.cursor = "zoom-in";
+    img.onclick = function () { openLightbox(l, idx); };
     var more = document.getElementById("desc-more");
     if (more) more.onclick = function () {
       var d = document.getElementById("card-desc");
@@ -177,6 +180,122 @@
   }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) {
     return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+
+  // fullscreen photo gallery (+ scoring report on the back)
+  function openLightbox(l, startIdx) {
+    closeLightbox();
+    var lb = document.createElement("div");
+    lb.id = "lightbox";
+    lb.innerHTML =
+      '<button class="lb-x" id="lb-x">✕</button>' +
+      '<div class="lb-tabs"><button id="lb-tab-photos" class="on">📷 Photos</button>' +
+      '<button id="lb-tab-report">📋 Report</button></div>' +
+      '<div id="lb-body"></div>' +
+      '<div class="lb-bar"><span class="lb-addr">' + esc(l.address) + " · " + fmt(l.price) + "</span></div>";
+    document.body.appendChild(lb);
+    var body = document.getElementById("lb-body");
+    var i = startIdx;
+
+    function photoView() {
+      body.innerHTML =
+        '<button class="lb-btn prev" id="lb-prev">‹</button>' +
+        '<img id="lb-img" src="' + l.photos[i] + '" alt="' + esc(l.address) + '">' +
+        '<button class="lb-btn next" id="lb-next">›</button>' +
+        '<span class="lb-count" id="lb-count">' + (i + 1) + " / " + l.photos.length + "</span>";
+      var go = function (d) {
+        i = (i + d + l.photos.length) % l.photos.length;
+        document.getElementById("lb-img").src = l.photos[i];
+        document.getElementById("lb-count").textContent = (i + 1) + " / " + l.photos.length;
+      };
+      document.getElementById("lb-prev").onclick = function (e) { e.stopPropagation(); go(-1); };
+      document.getElementById("lb-next").onclick = function (e) { e.stopPropagation(); go(1); };
+      lbKeys.go = go;
+    }
+
+    function reportView() {
+      body.innerHTML = '<div class="lb-report">' + buildReport(l) + "</div>";
+      lbKeys.go = null;
+    }
+
+    document.getElementById("lb-tab-photos").onclick = function () {
+      this.classList.add("on");
+      document.getElementById("lb-tab-report").classList.remove("on");
+      photoView();
+    };
+    document.getElementById("lb-tab-report").onclick = function () {
+      this.classList.add("on");
+      document.getElementById("lb-tab-photos").classList.remove("on");
+      reportView();
+    };
+    document.getElementById("lb-x").onclick = closeLightbox;
+    lb.addEventListener("click", function (e) { if (e.target === lb) closeLightbox(); });
+    document.addEventListener("keydown", lbKeys);
+    var sx = 0;
+    lb.addEventListener("touchstart", function (e) { sx = e.touches[0].clientX; }, { passive: true });
+    lb.addEventListener("touchend", function (e) {
+      var dx = e.changedTouches[0].clientX - sx;
+      if (Math.abs(dx) > 40 && lbKeys.go) lbKeys.go(dx > 0 ? -1 : 1);
+    }, { passive: true });
+    photoView();
+  }
+  function lbKeys(e) {
+    if (!document.getElementById("lightbox")) { document.removeEventListener("keydown", lbKeys); return; }
+    if (e.key === "Escape") closeLightbox();
+    if (lbKeys.go) {
+      if (e.key === "ArrowLeft") lbKeys.go(-1);
+      if (e.key === "ArrowRight") lbKeys.go(1);
+    }
+  }
+  function closeLightbox() {
+    var lb = document.getElementById("lightbox");
+    if (lb) lb.remove();
+    document.removeEventListener("keydown", lbKeys);
+  }
+
+  function buildReport(l) {
+    var R = (state.reports && state.reports[l.cluster]) || {};
+    var pros = [], cons = [];
+    if (l.total >= 16) pros.push("Top-tier score in this 43-house set (" + l.total + "/21)");
+    if (l.v3 >= 5) pros.push("Safety above the set's mid-pack");
+    if (l.v3 === 7) pros.push("Best safety rating in the set");
+    if (l.v2 >= 6) pros.push("Price trend pointing up");
+    if (l.v1 >= 6) pros.push("Strong everyday amenities — groceries, transit, hospital");
+    if ((l.status || "").toLowerCase() === "active") pros.push("Still active — available to tour and offer on");
+    var ppsq = parseFloat(l.pp_sqft);
+    if (ppsq && ppsq < 200) pros.push("Low price per sqft for the set ($" + l.pp_sqft + ")");
+    if (l.v3 <= 2) cons.push("Safety is the weak spot — walk the block day and night before offering");
+    if (l.v3 === 1) cons.push("Highest-crime cluster in the set — needs investor-grade risk tolerance");
+    if (l.v2 <= 4) cons.push("Flat or soft price trend — don't count on appreciation");
+    if (l.v1 <= 4) cons.push("Thinner daily amenities — groceries and transit farther");
+    if ((l.status || "").toLowerCase() === "pending") cons.push("Already pending — may take backup offers only");
+    if (l.flags.indexOf("condo") >= 0) cons.push("Condo: verify HOA dues, reserves, insurance and loan terms");
+    if (l.flags.indexOf("duplex") >= 0) cons.push("Duplex layout: verify both units' rents and condition");
+    if (parseInt(l.dom) >= 60) cons.push("Sitting 60+ days — ask why it hasn't moved");
+    if (!pros.length) pros.push("Priced inside your $220K–$260K band");
+    if (!cons.length) cons.push("No red flags from the scoring — still verify in person");
+
+    function row(label, score, text) {
+      return '<div class="rp-row"><div class="rp-head"><span>' + label + '</span><b>' + score + "/7</b></div>" +
+        '<div class="rp-bar"><i style="width:' + Math.round(score / 7 * 100) + '%"></i></div>' +
+        '<p>' + esc(text || "No detail recorded.") + "</p></div>";
+    }
+    var stores = (l.near || []).map(function (s) {
+      return "<li>🛒 " + esc(s.name) + " — " + s.mi + " mi</li>";
+    }).join("");
+    return '<h3>Scoring report</h3>' +
+      '<p class="rp-addr">' + esc(l.address) + " · " + esc(l.cluster) + ' · <b class="' +
+      ((l.status || "").toLowerCase() === "pending" ? "pending" : "active") + '">' + esc(l.status || "") + "</b></p>" +
+      row("🛡️ Safety", l.v3, R.safety) +
+      row("📈 Price trend", l.v2, R.trend) +
+      row("🏪 Amenities", l.v1, R.amenity) +
+      '<div class="rp-row"><div class="rp-head"><span>📍 Closest groceries</span></div><ul class="rp-stores">' + stores + "</ul></div>" +
+      '<div class="rp-cols"><div><h4>✅ Pros</h4><ul>' +
+      pros.map(function (p) { return "<li>" + esc(p) + "</li>"; }).join("") +
+      "</ul></div><div><h4>⚠️ Cons</h4><ul>" +
+      cons.map(function (c) { return "<li>" + esc(c) + "</li>"; }).join("") +
+      "</ul></div></div>" +
+      '<p class="rp-fine">Scores provisional v1 (Oct 11, 2026). Safety = modeled neighborhood estimates, not block-level. Verify before offering.</p>';
+  }
 
   function wire() {
     map.on("click", "houses", function (e) {
@@ -274,10 +393,12 @@
 
   fetch("listings.json").then(function (r) { return r.json(); }).then(function (listings) {
     return fetch("supermarkets.json").then(function (r) { return r.json(); }).then(function (stores) {
-      state.data = listings; state.stores = stores;
-      wire();
-      map.on("load", addDataLayers);
-      if (map.loaded()) addDataLayers();
+      return fetch("reports.json").then(function (r) { return r.json(); }).then(function (reports) {
+        state.data = listings; state.stores = stores; state.reports = reports;
+        wire();
+        map.on("load", addDataLayers);
+        if (map.loaded()) addDataLayers();
+      });
     });
   }).catch(function (err) {
     document.getElementById("map").innerHTML =

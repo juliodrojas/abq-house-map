@@ -27,7 +27,21 @@
   "taxes": "$2,570",
   "dom": "19",
   "pp_sqft": "$206.51",
-  "office": "Coldwell Banker Legacy"
+  "office": "Coldwell Banker Legacy",
+  "near": [
+   {
+    "name": "Walmart Neighborhood Market",
+    "mi": 0.9
+   },
+   {
+    "name": "A-1 Asian Market",
+    "mi": 1.2
+   },
+   {
+    "name": "Smith's",
+    "mi": 1.4
+   }
+  ]
  },
  {
   "id": 1,
@@ -60,7 +74,21 @@
   "taxes": "$2,108",
   "dom": "37",
   "pp_sqft": "$199.08",
-  "office": "Simply Real Estate"
+  "office": "Simply Real Estate",
+  "near": [
+   {
+    "name": "Smith's",
+    "mi": 1.4
+   },
+   {
+    "name": "Albertsons",
+    "mi": 1.4
+   },
+   {
+    "name": "Walmart Neighborhood Market",
+    "mi": 1.6
+   }
+  ]
  },
  {
   "id": 2,
@@ -90,7 +118,21 @@
   "taxes": "$1,904",
   "dom": "87",
   "pp_sqft": "$162.85",
-  "office": "Realty One of New Mexico"
+  "office": "Realty One of New Mexico",
+  "near": [
+   {
+    "name": "Smith's Food and Drug",
+    "mi": 1.6
+   },
+   {
+    "name": "Smith's",
+    "mi": 1.6
+   },
+   {
+    "name": "Shamrock Foods Foodservice Warehouse",
+    "mi": 1.7
+   }
+  ]
  },
  {
   "id": 3,
@@ -120,7 +162,21 @@
   "taxes": "$1,752",
   "dom": "17",
   "pp_sqft": "$248.32",
-  "office": "Keller Williams Realty"
+  "office": "Keller Williams Realty",
+  "near": [
+   {
+    "name": "Terry's Minimarket",
+    "mi": 2.0
+   },
+   {
+    "name": "Smith's",
+    "mi": 2.2
+   },
+   {
+    "name": "Albertsons Market",
+    "mi": 2.5
+   }
+  ]
  },
  {
   "id": 4,
@@ -150,7 +206,21 @@
   "taxes": "$1,565",
   "dom": "82",
   "pp_sqft": "$252.44",
-  "office": "Elevate New Mexico Realty"
+  "office": "Elevate New Mexico Realty",
+  "near": [
+   {
+    "name": "Terry's Minimarket",
+    "mi": 1.8
+   },
+   {
+    "name": "Smith's",
+    "mi": 2.0
+   },
+   {
+    "name": "Albertsons Market",
+    "mi": 2.6
+   }
+  ]
  },
  {
   "id": 5,
@@ -180,7 +250,21 @@
   "taxes": "$685",
   "dom": "12",
   "pp_sqft": "$252.97",
-  "office": "Red Fox Realty"
+  "office": "Red Fox Realty",
+  "near": [
+   {
+    "name": "Smith's",
+    "mi": 0.4
+   },
+   {
+    "name": "Terry's Minimarket",
+    "mi": 0.5
+   },
+   {
+    "name": "Silver Street Market",
+    "mi": 3.2
+   }
+  ]
  },
  {
   "id": 6,
@@ -210,7 +294,21 @@
   "taxes": "$2,002",
   "dom": "4",
   "pp_sqft": "$197.67",
-  "office": "LPT Realty"
+  "office": "LPT Realty",
+  "near": [
+   {
+    "name": "Silver Street Market",
+    "mi": 1.4
+   },
+   {
+    "name": "Stadium Super Market",
+    "mi": 1.5
+   },
+   {
+    "name": "Smith's",
+    "mi": 2.5
+   }
+  ]
  },
  {
   "id": 7,
@@ -240,7 +338,21 @@
   "taxes": "$1,433",
   "dom": "26",
   "pp_sqft": "$232.72",
-  "office": null
+  "office": null,
+  "near": [
+   {
+    "name": "La Monta\u00f1ita Co-op Rio Grande",
+    "mi": 1.8
+   },
+   {
+    "name": "Smith's",
+    "mi": 2.6
+   },
+   {
+    "name": "Albertsons Market",
+    "mi": 2.7
+   }
+  ]
  },
  {
   "id": 8,
@@ -270,7 +382,21 @@
   "taxes": null,
   "dom": "91",
   "pp_sqft": "$258.88",
-  "office": "Coldwell Banker Legacy"
+  "office": "Coldwell Banker Legacy",
+  "near": [
+   {
+    "name": "A-1 Asian Market",
+    "mi": 1.0
+   },
+   {
+    "name": "Walmart Neighborhood Market",
+    "mi": 1.2
+   },
+   {
+    "name": "Smith's",
+    "mi": 1.4
+   }
+  ]
  },
  {
   "id": 9,
@@ -300,7 +426,21 @@
   "taxes": "$1,381",
   "dom": "5",
   "pp_sqft": "$207.99",
-  "office": null
+  "office": null,
+  "near": [
+   {
+    "name": "Smith's",
+    "mi": 1.1
+   },
+   {
+    "name": "Terry's Minimarket",
+    "mi": 1.4
+   },
+   {
+    "name": "La Monta\u00f1ita Co-op Rio Grande",
+    "mi": 2.3
+   }
+  ]
  },
  {
   "id": 10,
@@ -330,7 +470,21 @@
   "taxes": "$1,217",
   "dom": "30",
   "pp_sqft": "$116.23",
-  "office": "Realty One of New Mexico"
+  "office": "Realty One of New Mexico",
+  "near": [
+   {
+    "name": "Smith's",
+    "mi": 1.1
+   },
+   {
+    "name": "Terry's Minimarket",
+    "mi": 1.4
+   },
+   {
+    "name": "La Monta\u00f1ita Co-op Rio Grande",
+    "mi": 2.3
+   }
+  ]
  },
  {
   "id": 11,
@@ -360,7 +514,21 @@
   "taxes": "$1,759",
   "dom": "31",
   "pp_sqft": "$250.75",
-  "office": "Schlavin Group Real Estate"
+  "office": "Schlavin Group Real Estate",
+  "near": [
+   {
+    "name": "A-1 Asian Market",
+    "mi": 1.1
+   },
+   {
+    "name": "Shamrock Foods Foodservice Warehouse",
+    "mi": 1.3
+   },
+   {
+    "name": "Sprouts Farmers Market",
+    "mi": 1.5
+   }
+  ]
  },
  {
   "id": 12,
@@ -390,7 +558,21 @@
   "taxes": "$786",
   "dom": "35",
   "pp_sqft": "$196.54",
-  "office": "Equity New Mexico"
+  "office": "Equity New Mexico",
+  "near": [
+   {
+    "name": "Albertsons Market",
+    "mi": 4.9
+   },
+   {
+    "name": "My Market",
+    "mi": 6.6
+   },
+   {
+    "name": "Terry's Minimarket",
+    "mi": 7.6
+   }
+  ]
  },
  {
   "id": 13,
@@ -422,7 +604,21 @@
   "taxes": "$663",
   "dom": "39",
   "pp_sqft": "$214.41",
-  "office": null
+  "office": null,
+  "near": [
+   {
+    "name": "Smith's",
+    "mi": 1.2
+   },
+   {
+    "name": "Terry's Minimarket",
+    "mi": 1.5
+   },
+   {
+    "name": "La Monta\u00f1ita Co-op Rio Grande",
+    "mi": 2.4
+   }
+  ]
  },
  {
   "id": 14,
@@ -452,7 +648,21 @@
   "taxes": "$1,636",
   "dom": "27",
   "pp_sqft": "$186.29",
-  "office": "The Lovely Home Company"
+  "office": "The Lovely Home Company",
+  "near": [
+   {
+    "name": "La Monta\u00f1ita Co-op Rio Grande",
+    "mi": 1.3
+   },
+   {
+    "name": "Albertsons Market",
+    "mi": 2.5
+   },
+   {
+    "name": "Smith's",
+    "mi": 2.7
+   }
+  ]
  },
  {
   "id": 15,
@@ -482,7 +692,21 @@
   "taxes": "$1,712",
   "dom": "51",
   "pp_sqft": "$199.36",
-  "office": "Q Realty"
+  "office": "Q Realty",
+  "near": [
+   {
+    "name": "La Monta\u00f1ita Co-op Rio Grande",
+    "mi": 1.4
+   },
+   {
+    "name": "Albertsons Market",
+    "mi": 2.4
+   },
+   {
+    "name": "Smith's",
+    "mi": 2.8
+   }
+  ]
  },
  {
   "id": 16,
@@ -515,7 +739,21 @@
   "taxes": "$1,804",
   "dom": "95",
   "pp_sqft": "$208.68",
-  "office": "Keller Williams Realty"
+  "office": "Keller Williams Realty",
+  "near": [
+   {
+    "name": "Moses Kountry Health Foods",
+    "mi": 2.5
+   },
+   {
+    "name": "Sprouts Farmers Market",
+    "mi": 2.6
+   },
+   {
+    "name": "Albertsons",
+    "mi": 2.7
+   }
+  ]
  },
  {
   "id": 17,
@@ -545,7 +783,21 @@
   "taxes": "$1,991",
   "dom": "97",
   "pp_sqft": "$187.83",
-  "office": "Coldwell Banker Legacy"
+  "office": "Coldwell Banker Legacy",
+  "near": [
+   {
+    "name": "A-1 Asian Market",
+    "mi": 0.7
+   },
+   {
+    "name": "Smith's",
+    "mi": 1.0
+   },
+   {
+    "name": "Apna Bazaar",
+    "mi": 1.1
+   }
+  ]
  },
  {
   "id": 18,
@@ -575,7 +827,21 @@
   "taxes": "$3,188",
   "dom": "34",
   "pp_sqft": "$124.01",
-  "office": "LPT Realty"
+  "office": "LPT Realty",
+  "near": [
+   {
+    "name": "Smith's Food and Drug",
+    "mi": 1.0
+   },
+   {
+    "name": "Smith's",
+    "mi": 1.0
+   },
+   {
+    "name": "Shamrock Foods Foodservice Warehouse",
+    "mi": 1.5
+   }
+  ]
  },
  {
   "id": 19,
@@ -607,7 +873,21 @@
   "taxes": "$1,985",
   "dom": "29",
   "pp_sqft": "$159",
-  "office": "Grimes Properties"
+  "office": "Grimes Properties",
+  "near": [
+   {
+    "name": "El Mezquite Market",
+    "mi": 0.3
+   },
+   {
+    "name": "Bombay Spice",
+    "mi": 0.4
+   },
+   {
+    "name": "Sprouts Farmers Market",
+    "mi": 1.3
+   }
+  ]
  },
  {
   "id": 20,
@@ -637,7 +917,21 @@
   "taxes": "$1,388",
   "dom": "107",
   "pp_sqft": "$189.35",
-  "office": "Braveheart Real Estate"
+  "office": "Braveheart Real Estate",
+  "near": [
+   {
+    "name": "La Monta\u00f1ita Co-op Rio Grande",
+    "mi": 1.8
+   },
+   {
+    "name": "Albertsons Market",
+    "mi": 2.6
+   },
+   {
+    "name": "Smith's",
+    "mi": 2.8
+   }
+  ]
  },
  {
   "id": 21,
@@ -667,7 +961,21 @@
   "taxes": "$1,668",
   "dom": "2",
   "pp_sqft": "$169.06",
-  "office": "MORE Realty, Inc"
+  "office": "MORE Realty, Inc",
+  "near": [
+   {
+    "name": "El Mezquite Market",
+    "mi": 0.4
+   },
+   {
+    "name": "Bombay Spice",
+    "mi": 0.6
+   },
+   {
+    "name": "Sprouts Farmers Market",
+    "mi": 1.3
+   }
+  ]
  },
  {
   "id": 22,
@@ -699,7 +1007,21 @@
   "taxes": "$1,934",
   "dom": "13",
   "pp_sqft": "$189.71",
-  "office": "Realty One of New Mexico"
+  "office": "Realty One of New Mexico",
+  "near": [
+   {
+    "name": "Albertsons",
+    "mi": 0.7
+   },
+   {
+    "name": "Smith's",
+    "mi": 1.1
+   },
+   {
+    "name": "Sprouts Farmers Market",
+    "mi": 1.1
+   }
+  ]
  },
  {
   "id": 23,
@@ -729,7 +1051,21 @@
   "taxes": "$2,456",
   "dom": "16",
   "pp_sqft": "$211.75",
-  "office": "Homewise"
+  "office": "Homewise",
+  "near": [
+   {
+    "name": "La Monta\u00f1ita Co-op Rio Grande",
+    "mi": 1.0
+   },
+   {
+    "name": "Silver Street Market",
+    "mi": 2.3
+   },
+   {
+    "name": "Smith's Food and Drug",
+    "mi": 2.4
+   }
+  ]
  },
  {
   "id": 24,
@@ -759,7 +1095,21 @@
   "taxes": "$2,469",
   "dom": "29",
   "pp_sqft": "$230.05",
-  "office": "New Mexico Home Group Realty"
+  "office": "New Mexico Home Group Realty",
+  "near": [
+   {
+    "name": "Sprouts Farmers Market",
+    "mi": 0.4
+   },
+   {
+    "name": "Walmart Neighborhood Market",
+    "mi": 3.3
+   },
+   {
+    "name": "Albertsons",
+    "mi": 3.7
+   }
+  ]
  },
  {
   "id": 25,
@@ -789,7 +1139,21 @@
   "taxes": "$1,773",
   "dom": "23",
   "pp_sqft": "$190.81",
-  "office": "Keller Williams Realty"
+  "office": "Keller Williams Realty",
+  "near": [
+   {
+    "name": "Sprouts Farmers Market",
+    "mi": 1.5
+   },
+   {
+    "name": "Walmart Neighborhood Market",
+    "mi": 1.8
+   },
+   {
+    "name": "Albertsons",
+    "mi": 2.2
+   }
+  ]
  },
  {
   "id": 26,
@@ -819,7 +1183,21 @@
   "taxes": "$2,005",
   "dom": "59",
   "pp_sqft": "$177.16",
-  "office": null
+  "office": null,
+  "near": [
+   {
+    "name": "Walmart Neighborhood Market",
+    "mi": 0.8
+   },
+   {
+    "name": "Albertsons",
+    "mi": 1.2
+   },
+   {
+    "name": "Albertsons Market",
+    "mi": 1.4
+   }
+  ]
  },
  {
   "id": 27,
@@ -849,7 +1227,21 @@
   "taxes": "$1,244",
   "dom": "29",
   "pp_sqft": "$227.27",
-  "office": "Casa Montoya Realty"
+  "office": "Casa Montoya Realty",
+  "near": [
+   {
+    "name": "Smith's",
+    "mi": 0.5
+   },
+   {
+    "name": "Terry's Minimarket",
+    "mi": 0.8
+   },
+   {
+    "name": "La Monta\u00f1ita Co-op Rio Grande",
+    "mi": 2.8
+   }
+  ]
  },
  {
   "id": 28,
@@ -879,7 +1271,21 @@
   "taxes": "$1,851",
   "dom": "64",
   "pp_sqft": "$141.09",
-  "office": "Coldwell Banker Legacy"
+  "office": "Coldwell Banker Legacy",
+  "near": [
+   {
+    "name": "El Mezquite Market",
+    "mi": 0.6
+   },
+   {
+    "name": "Bombay Spice",
+    "mi": 0.8
+   },
+   {
+    "name": "Sprouts Farmers Market",
+    "mi": 1.3
+   }
+  ]
  },
  {
   "id": 29,
@@ -909,7 +1315,21 @@
   "taxes": "$958",
   "dom": "4",
   "pp_sqft": "$242.32",
-  "office": "Realty One of New Mexico"
+  "office": "Realty One of New Mexico",
+  "near": [
+   {
+    "name": "Stadium Super Market",
+    "mi": 1.1
+   },
+   {
+    "name": "Silver Street Market",
+    "mi": 1.9
+   },
+   {
+    "name": "Smith's",
+    "mi": 2.2
+   }
+  ]
  },
  {
   "id": 30,
@@ -939,7 +1359,21 @@
   "taxes": "$3,144",
   "dom": "54",
   "pp_sqft": "$161.05",
-  "office": "Trillionaire Realty"
+  "office": "Trillionaire Realty",
+  "near": [
+   {
+    "name": "Terry's Minimarket",
+    "mi": 0.8
+   },
+   {
+    "name": "Smith's",
+    "mi": 1.0
+   },
+   {
+    "name": "La Monta\u00f1ita Co-op Rio Grande",
+    "mi": 4.1
+   }
+  ]
  },
  {
   "id": 31,
@@ -969,7 +1403,21 @@
   "taxes": "$2,145",
   "dom": "20",
   "pp_sqft": "$155.19",
-  "office": "Keller Williams Realty"
+  "office": "Keller Williams Realty",
+  "near": [
+   {
+    "name": "Bombay Spice",
+    "mi": 0.8
+   },
+   {
+    "name": "El Mezquite Market",
+    "mi": 0.9
+   },
+   {
+    "name": "Sprouts Farmers Market",
+    "mi": 1.8
+   }
+  ]
  },
  {
   "id": 32,
@@ -999,7 +1447,21 @@
   "taxes": "$1,301",
   "dom": "123",
   "pp_sqft": "$271.99",
-  "office": null
+  "office": null,
+  "near": [
+   {
+    "name": "Bombay Spice",
+    "mi": 1.2
+   },
+   {
+    "name": "El Mezquite Market",
+    "mi": 1.4
+   },
+   {
+    "name": "Sprouts Farmers Market",
+    "mi": 2.3
+   }
+  ]
  },
  {
   "id": 33,
@@ -1029,7 +1491,21 @@
   "taxes": "$1,714",
   "dom": "37",
   "pp_sqft": "$243.39",
-  "office": null
+  "office": null,
+  "near": [
+   {
+    "name": "Albertsons Market",
+    "mi": 1.2
+   },
+   {
+    "name": "Walmart Neighborhood Market",
+    "mi": 1.4
+   },
+   {
+    "name": "Albertsons",
+    "mi": 1.9
+   }
+  ]
  },
  {
   "id": 34,
@@ -1061,7 +1537,21 @@
   "taxes": "$1,122",
   "dom": "11",
   "pp_sqft": "$185.1",
-  "office": "Century 21 Champions"
+  "office": "Century 21 Champions",
+  "near": [
+   {
+    "name": "Albertsons",
+    "mi": 0.5
+   },
+   {
+    "name": "Sprouts Farmers Market",
+    "mi": 0.7
+   },
+   {
+    "name": "Walmart Neighborhood Market",
+    "mi": 0.9
+   }
+  ]
  },
  {
   "id": 35,
@@ -1091,7 +1581,21 @@
   "taxes": "$2,026",
   "dom": "28",
   "pp_sqft": "$154.4",
-  "office": "Home Experts Real Estate"
+  "office": "Home Experts Real Estate",
+  "near": [
+   {
+    "name": "Albertsons Market",
+    "mi": 2.2
+   },
+   {
+    "name": "Terry's Minimarket",
+    "mi": 4.9
+   },
+   {
+    "name": "Smith's",
+    "mi": 5.1
+   }
+  ]
  },
  {
   "id": 36,
@@ -1121,7 +1625,21 @@
   "taxes": "$1,800",
   "dom": "18",
   "pp_sqft": "$190.04",
-  "office": "Congress Realty, Inc"
+  "office": "Congress Realty, Inc",
+  "near": [
+   {
+    "name": "Albertsons Market",
+    "mi": 3.9
+   },
+   {
+    "name": "Terry's Minimarket",
+    "mi": 4.0
+   },
+   {
+    "name": "Smith's",
+    "mi": 4.2
+   }
+  ]
  },
  {
   "id": 37,
@@ -1151,7 +1669,21 @@
   "taxes": "$1,140",
   "dom": "314",
   "pp_sqft": "$159.14",
-  "office": "LPT Realty"
+  "office": "LPT Realty",
+  "near": [
+   {
+    "name": "Bombay Spice",
+    "mi": 1.2
+   },
+   {
+    "name": "El Mezquite Market",
+    "mi": 1.4
+   },
+   {
+    "name": "Sprouts Farmers Market",
+    "mi": 2.1
+   }
+  ]
  },
  {
   "id": 38,
@@ -1181,7 +1713,21 @@
   "taxes": "$2,035",
   "dom": "32",
   "pp_sqft": "$106.5",
-  "office": "Keller Williams Realty"
+  "office": "Keller Williams Realty",
+  "near": [
+   {
+    "name": "Walmart Neighborhood Market",
+    "mi": 0.8
+   },
+   {
+    "name": "Albertsons Market",
+    "mi": 1.0
+   },
+   {
+    "name": "Albertsons",
+    "mi": 1.2
+   }
+  ]
  },
  {
   "id": 39,
@@ -1211,7 +1757,21 @@
   "taxes": "$1,327",
   "dom": "26",
   "pp_sqft": "$217.18",
-  "office": null
+  "office": null,
+  "near": [
+   {
+    "name": "Smith's",
+    "mi": 0.6
+   },
+   {
+    "name": "Terry's Minimarket",
+    "mi": 0.8
+   },
+   {
+    "name": "Silver Street Market",
+    "mi": 3.0
+   }
+  ]
  },
  {
   "id": 40,
@@ -1241,7 +1801,21 @@
   "taxes": "$1,261",
   "dom": "56",
   "pp_sqft": "$181.89",
-  "office": null
+  "office": null,
+  "near": [
+   {
+    "name": "Sprouts Farmers Market",
+    "mi": 0.5
+   },
+   {
+    "name": "Smith's",
+    "mi": 0.8
+   },
+   {
+    "name": "Walmart Neighborhood Market",
+    "mi": 0.8
+   }
+  ]
  },
  {
   "id": 41,
@@ -1271,7 +1845,21 @@
   "taxes": "$1,159",
   "dom": "207",
   "pp_sqft": "$198.24",
-  "office": "EXP Realty LLC"
+  "office": "EXP Realty LLC",
+  "near": [
+   {
+    "name": "Smith's",
+    "mi": 0.7
+   },
+   {
+    "name": "Terry's Minimarket",
+    "mi": 1.0
+   },
+   {
+    "name": "La Monta\u00f1ita Co-op Rio Grande",
+    "mi": 2.7
+   }
+  ]
  },
  {
   "id": 42,
@@ -1301,6 +1889,20 @@
   "taxes": "$1,768",
   "dom": "7",
   "pp_sqft": "$230.37",
-  "office": "Coldwell Banker Legacy"
+  "office": "Coldwell Banker Legacy",
+  "near": [
+   {
+    "name": "Apna Bazaar",
+    "mi": 0.7
+   },
+   {
+    "name": "Smith's",
+    "mi": 0.9
+   },
+   {
+    "name": "A-1 Asian Market",
+    "mi": 1.4
+   }
+  ]
  }
 ]
