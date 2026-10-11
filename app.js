@@ -115,13 +115,25 @@
 
   function openCard(l) {
     var card = document.getElementById("card");
+    var stCls = (l.status || "").toLowerCase() === "pending" ? "pending" : "active";
     var flagHtml = l.flags.length
       ? '<div class="flags">⚠ ' + l.flags.join(" · ").toUpperCase() + (l.approx ? " · PIN APPROXIMATE" : "") + "</div>"
       : (l.approx ? '<div class="flags">⚠ PIN APPROXIMATE</div>' : "");
+    var short = l.desc && l.desc.length > 150 ? l.desc.slice(0, 150) + "…" : (l.desc || "");
+    var descHtml = l.desc
+      ? '<p class="desc" id="card-desc">' + esc(short) + "</p>" +
+        (l.desc.length > 150 ? '<button class="more" id="desc-more">more</button>' : "")
+      : "";
+    var facts = [];
+    if (l.dom) facts.push("DOM " + l.dom);
+    if (l.taxes) facts.push("Taxes " + l.taxes);
+    if (l.pp_sqft) facts.push(l.pp_sqft + "/sqft");
+    if (l.year_built) facts.push("Built " + l.year_built);
     card.innerHTML =
       '<button class="close-x" id="card-x">✕</button>' +
-      '<div class="photo">' + (l.flags.indexOf("condo") >= 0 ? "🏢" : "🏠") + "</div>" +
-      '<div class="body"><div class="price">' + fmt(l.price) + "</div>" +
+      '<div class="photo"><img src="' + l.photos[0] + '" alt="' + esc(l.address) + '" loading="lazy">' +
+      '<span class="status ' + stCls + '">' + esc(l.status || "") + "</span></div>" +
+      '<div class="body"><div class="price-row"><div class="price">' + fmt(l.price) + "</div></div>" +
       "<h2>" + esc(l.address) + "</h2>" +
       '<div class="meta">' + l.beds_baths + " bd/ba · " + l.sqft.toLocaleString() +
       " sqft · " + l.zip + "<br>" + esc(l.cluster) + "</div>" +
@@ -130,10 +142,19 @@
       '<div class="score"><b>' + l.v2 + '</b>trend</div>' +
       '<div class="score"><b>' + l.v3 + '</b>safety</div>' +
       '<div class="score"><b>' + l.total + '</b>total</div></div>' +
-      flagHtml +
-      '<div class="actions"><a target="_blank" rel="noopener" href="' + (l.pdf || l.url) + '">Brochure 📄</a></div></div>';
+      descHtml +
+      (facts.length ? '<div class="facts">' + facts.map(esc).join(" · ") + "</div>" : "") +
+      flagHtml + "</div>";
     card.classList.remove("hidden");
     document.getElementById("card-x").onclick = function () { card.classList.add("hidden"); };
+    var more = document.getElementById("desc-more");
+    if (more) more.onclick = function () {
+      var d = document.getElementById("card-desc");
+      var expanded = d.dataset.full === "1";
+      d.textContent = expanded ? short : l.desc;
+      d.dataset.full = expanded ? "" : "1";
+      more.textContent = expanded ? "more" : "less";
+    };
   }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) {
     return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
