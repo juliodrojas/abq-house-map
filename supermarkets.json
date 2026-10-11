@@ -1,0 +1,289 @@
+[
+ {
+  "name": "Smith's",
+  "lat": 35.1328497,
+  "lon": -106.496752,
+  "brand": "Smith's",
+  "shop": "supermarket"
+ },
+ {
+  "name": "Albertsons",
+  "lat": 35.1539857,
+  "lon": -106.499061,
+  "brand": "Albertsons",
+  "shop": "supermarket"
+ },
+ {
+  "name": "Smith's",
+  "lat": 35.1467061,
+  "lon": -106.527672,
+  "brand": "Smith's",
+  "shop": "supermarket"
+ },
+ {
+  "name": "Smith's",
+  "lat": 35.0760752,
+  "lon": -106.621717,
+  "brand": "Smith's",
+  "shop": "supermarket"
+ },
+ {
+  "name": "La Monta\u00f1ita Co-op Rio Grande",
+  "lat": 35.1178469,
+  "lon": -106.6750283,
+  "brand": "",
+  "shop": "supermarket"
+ },
+ {
+  "name": "Smith's",
+  "lat": 35.2051193,
+  "lon": -106.677393,
+  "brand": "Smith's",
+  "shop": "supermarket"
+ },
+ {
+  "name": "Sprouts Farmers Market",
+  "lat": 35.0867639,
+  "lon": -106.587756,
+  "brand": "Sprouts Farmers Market",
+  "shop": "supermarket"
+ },
+ {
+  "name": "Smith's",
+  "lat": 35.1788086,
+  "lon": -106.689825,
+  "brand": "Smith's",
+  "shop": "supermarket"
+ },
+ {
+  "name": "Albertsons Market",
+  "lat": 35.1523742,
+  "lon": -106.682262,
+  "brand": "Albertsons Market",
+  "shop": "supermarket"
+ },
+ {
+  "name": "Smith's",
+  "lat": 35.1293532,
+  "lon": -106.5672765,
+  "brand": "Smith's",
+  "shop": "supermarket"
+ },
+ {
+  "name": "Smith's",
+  "lat": 35.0955907,
+  "lon": -106.60308,
+  "brand": "Smith's",
+  "shop": "supermarket"
+ },
+ {
+  "name": "La Monta\u00f1ita Food Co-op",
+  "lat": 35.0792908,
+  "lon": -106.6052857,
+  "brand": "",
+  "shop": "supermarket"
+ },
+ {
+  "name": "Bombay Spice",
+  "lat": 35.0760666,
+  "lon": -106.5742199,
+  "brand": "",
+  "shop": "supermarket"
+ },
+ {
+  "name": "Sprouts Farmers Market",
+  "lat": 35.1315733,
+  "lon": -106.515096,
+  "brand": "Sprouts Farmers Market",
+  "shop": "supermarket"
+ },
+ {
+  "name": "Smith's",
+  "lat": 35.2397549,
+  "lon": -106.654884,
+  "brand": "Smith's",
+  "shop": "supermarket"
+ },
+ {
+  "name": "Sprouts Farmers Market",
+  "lat": 35.1485869,
+  "lon": -106.5837669,
+  "brand": "Sprouts Farmers Market",
+  "shop": "supermarket"
+ },
+ {
+  "name": "Walmart Neighborhood Market",
+  "lat": 35.1094328,
+  "lon": -106.517665,
+  "brand": "Walmart Neighborhood Market",
+  "shop": "supermarket"
+ },
+ {
+  "name": "Walmart Neighborhood Market",
+  "lat": 35.104694,
+  "lon": -106.592207,
+  "brand": "Walmart Neighborhood Market",
+  "shop": "supermarket"
+ },
+ {
+  "name": "Trader Joe's",
+  "lat": 35.1752083,
+  "lon": -106.5428004,
+  "brand": "Trader Joe's",
+  "shop": "supermarket"
+ },
+ {
+  "name": "El Mezquite Market",
+  "lat": 35.0750177,
+  "lon": -106.5786967,
+  "brand": "",
+  "shop": "supermarket"
+ },
+ {
+  "name": "Walmart Neighborhood Market",
+  "lat": 35.180523,
+  "lon": -106.689836,
+  "brand": "Walmart",
+  "shop": "supermarket"
+ },
+ {
+  "name": "Silver Street Market",
+  "lat": 35.0824774,
+  "lon": -106.6498619,
+  "brand": "",
+  "shop": "supermarket"
+ },
+ {
+  "name": "Moses Kountry Health Foods",
+  "lat": 35.1649172,
+  "lon": -106.6367032,
+  "brand": "",
+  "shop": "supermarket"
+ },
+ {
+  "name": "Shamrock Foods Foodservice Warehouse",
+  "lat": 35.1347033,
+  "lon": -106.618054,
+  "brand": "",
+  "shop": "supermarket"
+ },
+ {
+  "name": "Stadium Super Market",
+  "lat": 35.07019,
+  "lon": -106.6448399,
+  "brand": "",
+  "shop": "supermarket"
+ },
+ {
+  "name": "Sprouts Farmers Market",
+  "lat": 35.0664322,
+  "lon": -106.498929,
+  "brand": "Sprouts Farmers Market",
+  "shop": "supermarket"
+ },
+ {
+  "name": "Sprouts Farmers Market",
+  "lat": 35.2048169,
+  "lon": -106.646816,
+  "brand": "Sprouts Farmers Market",
+  "shop": "supermarket"
+ },
+ {
+  "name": "Albertsons",
+  "lat": 35.1154065,
+  "lon": -106.5139881,
+  "brand": "Albertsons",
+  "shop": "supermarket"
+ },
+ {
+  "name": "Smith's",
+  "lat": 35.0805842,
+  "lon": -106.71297,
+  "brand": "Smith's",
+  "shop": "supermarket"
+ },
+ {
+  "name": "Natural Grocers",
+  "lat": 35.2429269,
+  "lon": -106.6561532,
+  "brand": "Natural Grocers",
+  "shop": "supermarket"
+ },
+ {
+  "name": "Apna Bazaar",
+  "lat": 35.1300737,
+  "lon": -106.5643167,
+  "brand": "",
+  "shop": "supermarket"
+ },
+ {
+  "name": "Albertsons",
+  "lat": 35.2005882,
+  "lon": -106.6504876,
+  "brand": "Albertsons",
+  "shop": "supermarket"
+ },
+ {
+  "name": "El Paisano Market Carniceria",
+  "lat": 35.2427894,
+  "lon": -106.6946329,
+  "brand": "",
+  "shop": "supermarket"
+ },
+ {
+  "name": "Smith's Food and Drug",
+  "lat": 35.1467341,
+  "lon": -106.6405012,
+  "brand": "",
+  "shop": "grocery"
+ },
+ {
+  "name": "Smith's",
+  "lat": 35.1467491,
+  "lon": -106.6404931,
+  "brand": "Smith's",
+  "shop": "supermarket"
+ },
+ {
+  "name": "A-1 Asian Market",
+  "lat": 35.1316884,
+  "lon": -106.5771836,
+  "brand": "",
+  "shop": "supermarket"
+ },
+ {
+  "name": "My Market",
+  "lat": 34.9862293,
+  "lon": -106.6134525,
+  "brand": "",
+  "shop": "supermarket"
+ },
+ {
+  "name": "Albertsons Market",
+  "lat": 35.0279128,
+  "lon": -106.6824667,
+  "brand": "Albertsons Market",
+  "shop": "supermarket"
+ },
+ {
+  "name": "Whole Foods Market",
+  "lat": 35.2073172,
+  "lon": -106.6553983,
+  "brand": "Whole Foods Market",
+  "shop": "supermarket"
+ },
+ {
+  "name": "Albertsons Market",
+  "lat": 35.1146399,
+  "lon": -106.5343364,
+  "brand": "Albertsons Market",
+  "shop": "supermarket"
+ },
+ {
+  "name": "Terry's Minimarket",
+  "lat": 35.0775169,
+  "lon": -106.7165437,
+  "brand": "",
+  "shop": "supermarket"
+ }
+]

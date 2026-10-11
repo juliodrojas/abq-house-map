@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>ABQ House Map — 3BR $220K–$260K</title>
+<link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app">
+  <header id="topbar">
+    <div class="brand">🏠 ABQ House Map</div>
+    <div class="search-wrap">
+      <input id="search" type="text" placeholder="Search address, street, store…" autocomplete="off">
+      <div id="search-results"></div>
+    </div>
+    <button id="menu-btn" class="icon-btn" aria-label="Filters">☰</button>
+  </header>
+
+  <div id="map"></div>
+
+  <aside id="panel" class="open">
+    <div class="panel-head">
+      <strong>Filters</strong>
+      <button id="panel-close" class="icon-btn">✕</button>
+    </div>
+    <div class="group">
+      <label>Min score</label>
+      <div class="btn-row" id="score-btns">
+        <button data-min="0" class="on">All</button>
+        <button data-min="14">14+</button>
+        <button data-min="15">15+</button>
+        <button data-min="16">16+</button>
+        <button data-min="17">17</button>
+      </div>
+    </div>
+    <div class="group">
+      <label>Layers</label>
+      <div class="btn-row wrap">
+        <button id="tgl-stores" class="on">🛒 Stores</button>
+        <button id="tgl-condos" class="on">🏢 Condos</button>
+        <button id="tgl-3d" class="on">🧊 3D</button>
+      </div>
+    </div>
+    <div class="group">
+      <label>Basemap</label>
+      <div class="btn-row">
+        <button id="base-cartoon" class="on">🎨 Cartoon</button>
+        <button id="base-sat">🛰️ Satellite</button>
+      </div>
+    </div>
+    <div class="group">
+      <label>Neighborhood</label>
+      <select id="cluster-filter"><option value="">All neighborhoods</option></select>
+    </div>
+    <div class="legend">
+      <div><span class="dot" style="background:#22c55e"></span>17 top</div>
+      <div><span class="dot" style="background:#84cc16"></span>16</div>
+      <div><span class="dot" style="background:#eab308"></span>15</div>
+      <div><span class="dot" style="background:#f97316"></span>14</div>
+      <div><span class="dot" style="background:#ef4444"></span>≤12</div>
+      <div><span class="dot store"></span>store</div>
+    </div>
+    <p class="fine">43 active 3BR listings $220K–$260K · SWMLS feed Oct 10, 2026 8:59 PM MDT · scores = amenities + trend + safety (/21)</p>
+  </aside>
+
+  <div id="card" class="hidden"></div>
+</div>
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
