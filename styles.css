@@ -3,9 +3,9 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Ro
 #app{position:relative;height:100dvh;width:100%;overflow:hidden}
 #map{position:absolute;inset:0}
 #topbar{position:absolute;top:0;left:0;right:0;z-index:10;display:flex;gap:8px;align-items:center;
-  padding:10px 12px;background:rgba(255,255,255,.92);backdrop-filter:blur(6px);
+  padding:10px 12px;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
   box-shadow:0 2px 8px rgba(0,0,0,.12)}
-.brand{font-weight:800;font-size:17px;white-space:nowrap}
+.brand{font-weight:800;font-size:17px;white-space:nowrap;display:flex;align-items:center;gap:6px}
 .search-wrap{position:relative;flex:1;max-width:520px}
 #search{width:100%;padding:9px 12px;border:1.5px solid #d1d5db;border-radius:10px;font-size:15px;outline:none}
 #search:focus{border-color:#3b82f6}
@@ -91,10 +91,18 @@ html,body{height:100%;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Ro
 .maplibregl-popup-content{border-radius:12px;padding:10px 12px;font-size:13px}
 @media (max-width:640px){
   .brand{font-size:15px}
-  #panel{top:auto;bottom:0;right:0;left:0;width:100%;border-radius:16px 16px 0 0;transform:translateY(110%)}
+  .brand .brand-text{display:none}
+  #search{font-size:16px} /* stops iOS auto-zoom on focus */
+  #panel{top:auto;bottom:0;right:0;left:0;width:100%;border-radius:16px 16px 0 0;transform:translateY(110%);
+    padding-bottom:calc(14px + env(safe-area-inset-bottom))}
   #panel.open{transform:none}
 }
 
 @media (max-width:640px){
-  #detail{left:0;right:0;top:auto;bottom:0;width:100%;max-height:76dvh;border-radius:18px 18px 0 0}
+  #detail{left:0;right:0;top:auto;bottom:0;width:100%;max-height:76dvh;border-radius:18px 18px 0 0;
+    padding-bottom:env(safe-area-inset-bottom)}
+  #detail::before{content:"";display:block;width:44px;height:5px;border-radius:99px;background:#d1d5db;
+    margin:8px auto 0;flex:none}
+  #detail .car-btn{width:44px;height:44px}
+  #detail .pd-tabs button{padding:12px;font-size:15px}
 }
