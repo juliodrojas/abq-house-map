@@ -212,19 +212,48 @@
   var r = 0.08125 / 12, n = 360;
   var f = Math.pow(1 + r, n);
   var pi = loan * r * f / (f - 1);
-  var taxYr = l.taxes ? parseInt(String(l.taxes).replace(/[^0-9]/g, ""), 10) : Math.round(price * 0.0141);
-  var tax = taxYr / 12, ins = 160;
+  // Buyer tax: NM resets assessment to market value on sale ("tax lightning"),
+  // so the buyer's bill ≈ 1.61% of price — not the seller's (capped) figure.
+  var tax = price * 0.0161 / 12, ins = 110;
   return { down: down, pi: Math.round(pi), tax: Math.round(tax), ins: ins, total: Math.round(pi + tax + ins) };
 }
+// 3BR market rent ranges per ZIP (Oct 2026): Zillow observed rents + HUD SAFMR FY2027.
+// conf: high = sources agree; med = Zillow 10-19% above HUD; low = sources disagree on direction.
+var RENT_RANGES = {
+  "87102": { lo: 1840, hi: 2100, conf: "med" },
+  "87105": { lo: 1840, hi: 2105, conf: "med" },
+  "87107": { lo: 1840, hi: 2028, conf: "med" },
+  "87108": { lo: 1840, hi: 2200, conf: "med" },
+  "87109": { lo: 1900, hi: 2080, conf: "low" },
+  "87110": { lo: 1960, hi: 2030, conf: "high" },
+  "87111": { lo: 2412, hi: 2420, conf: "high" },
+  "87112": { lo: 1840, hi: 1951, conf: "med" },
+  "87113": { lo: 2395, hi: 2630, conf: "high" },
+  "87120": { lo: 2200, hi: 2340, conf: "high" },
+  "87121": { lo: 1875, hi: 2240, conf: "low" },
+  "87123": { lo: 1840, hi: 2100, conf: "med" }
+};
 function mortgageBox(l) {
   var m = mortgageEst(l);
+  var r = RENT_RANGES[l.zip];
+  var rentHtml = "", cfHtml = "";
+  if (r) {
+    var cfLo = r.lo - m.total, cfHi = r.hi - m.total;
+    var cfTxt = (cfLo >= 0 ? "+$" : "-$") + Math.abs(cfLo).toLocaleString() +
+      " to " + (cfHi >= 0 ? "+$" : "-$") + Math.abs(cfHi).toLocaleString() + "/mo";
+    rentHtml = '<div class="mg-rows"><span>🏠 Est. rent (' + l.zip + "): $" + r.lo.toLocaleString() +
+      "–$" + r.hi.toLocaleString() + "/mo" + (r.conf === "low" ? " ⚠" : "") + "</span></div>";
+    cfHtml = '<div class="mg-cf' + (cfLo >= 0 ? " pos" : " neg") + '">📊 Cash flow: ' + cfTxt + "</div>";
+  }
   return '<div class="mortgage">' +
     '<div class="mg-head">💰 Estimated monthly cost</div>' +
     '<div class="mg-total">$' + m.total.toLocaleString() + "<span>/mo</span></div>" +
     '<div class="mg-rows"><span>P&amp;I $' + m.pi.toLocaleString() + "</span>" +
     "<span>Tax $" + m.tax.toLocaleString() + "</span>" +
     "<span>Ins $" + m.ins + "</span></div>" +
-    '<div class="mg-note">25% down ($' + m.down.toLocaleString() + ") · 30-yr fixed 8.125% (estimate) · taxes from listing</div>" +
+    rentHtml + cfHtml +
+    '<div class="mg-note">25% down ($' + m.down.toLocaleString() + ") · 30-yr fixed 8.125% · tax 1.61% of price (NM resets assessment on sale) · landlord ins ~$110/mo" +
+    (r ? "<br>Rents: Zillow observed + HUD SAFMR, Oct 2026" + (r.conf === "low" ? " · ⚠ sources disagree here — verify with real listings" : "") : "") + "</div>" +
     "</div>";
 }
 function esc(s) { return String(s).replace(/[&<>"]/g, function (c) {
