@@ -158,7 +158,7 @@ footer a{color:#6b7280}
     var t = setInterval(function () {
       if (i < samples.length) { greetEl.textContent = "Welcome, " + samples[i]; i++; }
       else { clearInterval(t); finale(); }
-    }, 550);
+    }, 250);
   }
   document.getElementById("set-name").onclick = function (e) {
     e.preventDefault();
