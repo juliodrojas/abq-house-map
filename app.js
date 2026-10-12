@@ -159,6 +159,7 @@
         '<div class="score"><b>' + l.v2 + '</b>trend</div>' +
         '<div class="score"><b>' + l.v3 + '</b>safety</div>' +
         '<div class="score"><b>' + l.total + '</b>total</div></div>' +
+        mortgageBox(l) +
         descHtml +
         (facts.length ? '<div class="facts">' + facts.map(esc).join(" · ") + "</div>" : "") +
         (l.office ? '<div class="office">Listed by ' + esc(l.office) + "</div>" : "") +
@@ -204,7 +205,29 @@
     var p = document.getElementById("detail");
     if (p) p.remove();
   }
-  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) {
+  function mortgageEst(l) {
+  var price = typeof l.price === "number" ? l.price : parseInt(String(l.price).replace(/[^0-9]/g, ""), 10);
+  var down = Math.round(price * 0.25);
+  var loan = price - down;
+  var r = 0.08125 / 12, n = 360;
+  var f = Math.pow(1 + r, n);
+  var pi = loan * r * f / (f - 1);
+  var taxYr = l.taxes ? parseInt(String(l.taxes).replace(/[^0-9]/g, ""), 10) : Math.round(price * 0.0141);
+  var tax = taxYr / 12, ins = 160;
+  return { down: down, pi: Math.round(pi), tax: Math.round(tax), ins: ins, total: Math.round(pi + tax + ins) };
+}
+function mortgageBox(l) {
+  var m = mortgageEst(l);
+  return '<div class="mortgage">' +
+    '<div class="mg-head">💰 Estimated monthly cost</div>' +
+    '<div class="mg-total">$' + m.total.toLocaleString() + "<span>/mo</span></div>" +
+    '<div class="mg-rows"><span>P&amp;I $' + m.pi.toLocaleString() + "</span>" +
+    "<span>Tax $" + m.tax.toLocaleString() + "</span>" +
+    "<span>Ins $" + m.ins + "</span></div>" +
+    '<div class="mg-note">25% down ($' + m.down.toLocaleString() + ") · 30-yr fixed 8.125% (estimate) · taxes from listing</div>" +
+    "</div>";
+}
+function esc(s) { return String(s).replace(/[&<>"]/g, function (c) {
     return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
 
   function buildReport(l) {
