@@ -19,8 +19,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;c
   padding:6px 14px;border-radius:999px;font-size:13px;font-weight:600;margin-bottom:18px}
 .hero h1{font-size:clamp(34px,7vw,56px);font-weight:800;letter-spacing:-.02em}
 .hero h1 .wave{display:inline-block}
-#greet-name{display:inline-block;transition:opacity .25s}
-#greet-name.cycling{opacity:.45}
+#greet-text{display:inline-block;transition:opacity .25s}
+#greet-text.cycling{opacity:.45}
 .hero p.sub{margin:16px auto 0;max-width:620px;font-size:17px;color:#d1e7e4}
 .cta-row{margin-top:28px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 .btn{display:inline-block;padding:14px 28px;border-radius:12px;font-size:16px;font-weight:700;text-decoration:none}
@@ -59,10 +59,10 @@ footer a{color:#6b7280}
 <div class="hero">
   <img src="logo.png" alt="HighlandAP logo" style="width:92px;height:92px;border-radius:22px;box-shadow:0 8px 24px rgba(0,0,0,.35);margin-bottom:14px">
   <div class="badge">🏠 ABQ rental-investment research</div>
-  <h1><span class="wave">👋</span> <span id="greet-word">Welcome</span><span id="greet-name"></span></h1>
+  <h1><span class="wave">👋</span> <span id="greet-text">Welcome</span></h1>
   <p class="sub"><strong>HighlandAP</strong> — every 3-bedroom house in Albuquerque between
   $220K and $260K, mapped in 3D, scored, and ready to explore.</p>
-  <p style="margin-top:10px;font-size:13px;color:#9fd8d2">Not <span id="who">Julio</span>? <a href="#" id="set-name" style="color:#fff;font-weight:700">Set your name</a></p>
+  <p style="margin-top:10px;font-size:13px;color:#9fd8d2"><span id="who-wrap" style="display:none">Not <span id="who"></span>? </span><a href="#" id="set-name" style="color:#fff;font-weight:700">Set your name</a></p>
   <div class="cta-row">
     <a class="btn primary" href="map.html">Open the 3D map 🗺️</a>
     <a class="btn ghost" href="#scores">How the scores work</a>
@@ -129,37 +129,43 @@ footer a{color:#6b7280}
 </footer>
 <script>
 (function () {
-  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) {
-    return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
   function clean(n) { return (n || "").trim().slice(0, 24); }
-  function current() {
+  var target = (function () {
     var q = clean(new URLSearchParams(location.search).get("name"));
     if (q) { try { localStorage.setItem("hap_name", q); } catch (e) {} return q; }
-    try { return clean(localStorage.getItem("hap_name")) || "Julio"; } catch (e) { return "Julio"; }
+    try { return clean(localStorage.getItem("hap_name")); } catch (e) { return ""; }
+  })();
+  var samples = ["Juan", "Alberto", "Mar\u00eda", "Sof\u00eda", "Diego", "Carlos", "Elena", "Miguel", "Rosa", "Pedro"]
+    .filter(function (s) { return s.toLowerCase() !== target.toLowerCase(); });
+
+  var greetEl = document.getElementById("greet-text");
+  var whoWrap = document.getElementById("who-wrap");
+  var whoEl = document.getElementById("who");
+
+  function setWho() {
+    if (target) { whoWrap.style.display = ""; whoEl.textContent = target; }
+    else { whoWrap.style.display = "none"; }
   }
-  function render(animate) {
-    var n = current();
-    var el = document.getElementById("greet-name");
-    document.getElementById("who").textContent = n;
-    if (!animate) { el.textContent = ", " + n; return; }
-    // cycle through sample names, then land on the visitor's name
-    var samples = ["Juan", "Alberto", "María", "Sofía", "Diego"]
-      .filter(function (s) { return s.toLowerCase() !== n.toLowerCase(); })
-      .slice(0, 4);
-    var seq = samples.concat([n]), i = 0;
-    el.classList.add("cycling");
+  function finale() {
+    greetEl.textContent = target ? "Welcome, " + target : "Welcome to Albuquerque";
+    greetEl.classList.remove("cycling");
+    setWho();
+  }
+  function animate() {
+    var i = 0;
+    greetEl.classList.add("cycling");
+    setWho();
     var t = setInterval(function () {
-      el.textContent = ", " + seq[i];
-      i++;
-      if (i >= seq.length) { clearInterval(t); el.classList.remove("cycling"); }
-    }, 650);
+      if (i < samples.length) { greetEl.textContent = "Welcome, " + samples[i]; i++; }
+      else { clearInterval(t); finale(); }
+    }, 550);
   }
   document.getElementById("set-name").onclick = function (e) {
     e.preventDefault();
-    var n = clean(prompt("Your name:", current()));
-    if (n) { try { localStorage.setItem("hap_name", n); } catch (e) {} render(true); }
+    var n = clean(prompt("Your name:", target || ""));
+    if (n) { target = n; try { localStorage.setItem("hap_name", n); } catch (e) {} animate(); }
   };
-  render(true);
+  animate();
 })();
 </script>
 </body>
